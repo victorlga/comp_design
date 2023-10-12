@@ -1,0 +1,30 @@
+Quartus Prime Archive log --	/home/victor/insper/6-sem/descomp/aula7/aula7.qarlog
+
+Archive:	/home/victor/insper/6-sem/descomp/aula7/aula7.qar
+Date:		Sun Oct  1 14:04:36 2023
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/victor/insper/6-sem/descomp/aula7/ULASomaSub.vhd
+/home/victor/insper/6-sem/descomp/aula7/Waveform.vwf
+/home/victor/insper/6-sem/descomp/aula7/aula7.qpf
+/home/victor/insper/6-sem/descomp/aula7/aula7.qsf
+/home/victor/insper/6-sem/descomp/aula7/aula7.vhd
+/home/victor/insper/6-sem/descomp/aula7/blockDecoder.vhd
+/home/victor/insper/6-sem/descomp/aula7/cpu.vhd
+/home/victor/insper/6-sem/descomp/aula7/decoder3x8.vhd
+/home/victor/insper/6-sem/descomp/aula7/decoderGeneric.vhd
+/home/victor/insper/6-sem/descomp/aula7/edgeDetector.vhd
+/home/victor/insper/6-sem/descomp/aula7/flipflop.vhd
+/home/victor/insper/6-sem/descomp/aula7/logicaDesvio.vhd
+/home/victor/insper/6-sem/descomp/aula7/memoriaRAM.vhd
+/home/victor/insper/6-sem/descomp/aula7/memoriaROM.vhd
+/home/victor/insper/6-sem/descomp/aula7/muxGenerico2x1.vhd
+/home/victor/insper/6-sem/descomp/aula7/muxGenerico4x1.vhd
+/home/victor/insper/6-sem/descomp/aula7/registradorGenerico.vhd
+/home/victor/insper/6-sem/descomp/aula7/somaConstante.vhd
+/home/victor/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 19 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

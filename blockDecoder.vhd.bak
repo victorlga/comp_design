@@ -1,0 +1,16 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity blockDecoder is
+  port ( 
+  );
+end entity;
+
+architecture comportamento of blockDecoder is
+	
+	
+	alias 
+	
+begin
+
+end architecture;
