@@ -1,0 +1,11 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity logicaDesvio is
+
+    port (entrada_flag : in std_logic;
+       saida : out std_logic;
+       entrada_jeq : in std_logic;
+       entrada_jmp : in std_logic
+        );
+end entity;

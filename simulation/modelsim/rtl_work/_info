@@ -1,0 +1,328 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/victor/insper/6-sem/descomp/aula5/simulation/modelsim
+Eaula5
+w1695217401
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 7
+R0
+8/home/victor/insper/6-sem/descomp/aula5/aula5.vhd
+F/home/victor/insper/6-sem/descomp/aula5/aula5.vhd
+l0
+L4 1
+VIPaaA6T5T0_nBlY6zkFAN3
+!s100 c[fAfDPn4aj5RgP@Z46K;1
+Z3 OV;C;2020.1;71
+33
+Z4 !s110 1695217578
+!i10b 1
+Z5 !s108 1695217578.000000
+!s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/aula5.vhd|
+!s107 /home/victor/insper/6-sem/descomp/aula5/aula5.vhd|
+!i113 1
+Z6 o-2008 -work work
+Z7 tExplicit 1 CvgOpt 0
+Edecodergeneric
+Z8 w1695217558
+R1
+R2
+!i122 2
+R0
+Z9 8/home/victor/insper/6-sem/descomp/aula5/decoderGeneric.vhd
+Z10 F/home/victor/insper/6-sem/descomp/aula5/decoderGeneric.vhd
+l0
+L4 1
+VjFYNIfb_7N1EjcS:UKmiY0
+!s100 zWj<f<0Nb<^:HoJKGcGhz0
+R3
+33
+R4
+!i10b 1
+R5
+Z11 !s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/decoderGeneric.vhd|
+Z12 !s107 /home/victor/insper/6-sem/descomp/aula5/decoderGeneric.vhd|
+!i113 1
+R6
+R7
+Acomportamento
+R1
+R2
+DEx4 work 14 decodergeneric 0 22 jFYNIfb_7N1EjcS:UKmiY0
+!i122 2
+l20
+L10 20
+V5g?]m>[;RQ[G7Pc[?^10G0
+!s100 ;=?2ogU>R5:[?_A>>71QP1
+R3
+33
+R4
+!i10b 1
+R5
+R11
+R12
+!i113 1
+R6
+R7
+Ememoriaram
+Z13 w1694903928
+Z14 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R1
+R2
+!i122 5
+R0
+Z15 8/home/victor/insper/6-sem/descomp/aula5/memoriaRAM.vhd
+Z16 F/home/victor/insper/6-sem/descomp/aula5/memoriaRAM.vhd
+l0
+L5 1
+VFMJ`IAFIYZg]ARWCghmkc0
+!s100 B=^LM9EQKNK6@VkKozn5Q3
+R3
+33
+R4
+!i10b 1
+R5
+Z17 !s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/memoriaRAM.vhd|
+Z18 !s107 /home/victor/insper/6-sem/descomp/aula5/memoriaRAM.vhd|
+!i113 1
+R6
+R7
+Artl
+R14
+R1
+R2
+DEx4 work 10 memoriaram 0 22 FMJ`IAFIYZg]ARWCghmkc0
+!i122 5
+l28
+L21 20
+ViZCHG__GLb5X>[iLKOg9D2
+!s100 bO73HTe5>QfXTYe_MJhFT3
+R3
+33
+R4
+!i10b 1
+R5
+R17
+R18
+!i113 1
+R6
+R7
+Ememoriarom
+Z19 w1695215231
+R14
+R1
+R2
+!i122 6
+R0
+Z20 8/home/victor/insper/6-sem/descomp/aula5/memoriaROM.vhd
+Z21 F/home/victor/insper/6-sem/descomp/aula5/memoriaROM.vhd
+l0
+L5 1
+V38oiH0b=m8`a:OiX]bIXj2
+!s100 iF3VMaokVZf`3Q`1]fiCb2
+R3
+33
+R4
+!i10b 1
+R5
+Z22 !s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/memoriaROM.vhd|
+Z23 !s107 /home/victor/insper/6-sem/descomp/aula5/memoriaROM.vhd|
+!i113 1
+R6
+R7
+Aassincrona
+R14
+R1
+R2
+DEx4 work 10 memoriarom 0 22 38oiH0b=m8`a:OiX]bIXj2
+!i122 6
+l45
+L16 32
+V[1`UVX50Q6F6A=L=[aIcl0
+!s100 ?TSQRJPczfoNU9N24@_=?3
+R3
+33
+R4
+!i10b 1
+R5
+R22
+R23
+!i113 1
+R6
+R7
+Emuxgenerico2x1
+Z24 w1692984408
+R1
+R2
+!i122 3
+R0
+Z25 8/home/victor/insper/6-sem/descomp/aula5/muxGenerico2x1.vhd
+Z26 F/home/victor/insper/6-sem/descomp/aula5/muxGenerico2x1.vhd
+l0
+L4 1
+VMhli]9WeEzZU9Qa2Bhmbk1
+!s100 GfzghLNBc_MnJ3TTEd4<N3
+R3
+33
+R4
+!i10b 1
+R5
+Z27 !s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/muxGenerico2x1.vhd|
+Z28 !s107 /home/victor/insper/6-sem/descomp/aula5/muxGenerico2x1.vhd|
+!i113 1
+R6
+R7
+Acomportamento
+R1
+R2
+DEx4 work 14 muxgenerico2x1 0 22 Mhli]9WeEzZU9Qa2Bhmbk1
+!i122 3
+l15
+L14 4
+VjdF`<99O_keZEiC3z9ee43
+!s100 o4>?ol65E@7T8D;XjQohT1
+R3
+33
+R4
+!i10b 1
+R5
+R27
+R28
+!i113 1
+R6
+R7
+Eregistradorgenerico
+Z29 w1692984456
+R1
+R2
+!i122 4
+R0
+Z30 8/home/victor/insper/6-sem/descomp/aula5/registradorGenerico.vhd
+Z31 F/home/victor/insper/6-sem/descomp/aula5/registradorGenerico.vhd
+l0
+L4 1
+VCmZ45`Cm^_iWh<j^hCPHW0
+!s100 0Ihoo14i<C62=ig^_I;930
+R3
+33
+R4
+!i10b 1
+R5
+Z32 !s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/registradorGenerico.vhd|
+Z33 !s107 /home/victor/insper/6-sem/descomp/aula5/registradorGenerico.vhd|
+!i113 1
+R6
+R7
+Acomportamento
+R1
+R2
+DEx4 work 19 registradorgenerico 0 22 CmZ45`Cm^_iWh<j^hCPHW0
+!i122 4
+l16
+L15 23
+V2hf0^h158=mEQZUffddB:1
+!s100 =MA1GPaC1lAdP9h:cH3560
+R3
+33
+R4
+!i10b 1
+R5
+R32
+R33
+!i113 1
+R6
+R7
+Esomaconstante
+Z34 w1692984535
+R14
+R1
+R2
+!i122 1
+R0
+Z35 8/home/victor/insper/6-sem/descomp/aula5/somaConstante.vhd
+Z36 F/home/victor/insper/6-sem/descomp/aula5/somaConstante.vhd
+l0
+L5 1
+V@5X?kVE]lcJlcZJkFJZ]=2
+!s100 ;TX5?Y5Qga6d^^YB@J9Tj1
+R3
+33
+R4
+!i10b 1
+R5
+Z37 !s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/somaConstante.vhd|
+Z38 !s107 /home/victor/insper/6-sem/descomp/aula5/somaConstante.vhd|
+!i113 1
+R6
+R7
+Acomportamento
+R14
+R1
+R2
+DEx4 work 13 somaconstante 0 22 @5X?kVE]lcJlcZJkFJZ]=2
+!i122 1
+l19
+L18 4
+V4iCNL;]Rc42LCZLeX@jc`3
+!s100 d:XMbH7V_^L6z02=YMJ?11
+R3
+33
+R4
+!i10b 1
+R5
+R37
+R38
+!i113 1
+R6
+R7
+Eulasomasub
+Z39 w1694918236
+R14
+R1
+R2
+!i122 0
+R0
+Z40 8/home/victor/insper/6-sem/descomp/aula5/ULASomaSub.vhd
+Z41 F/home/victor/insper/6-sem/descomp/aula5/ULASomaSub.vhd
+l0
+L5 1
+VoE`DhKbdP0c>K29STKkEJ1
+!s100 AgjE7FgZBZP?n3lzl00Ke0
+R3
+33
+R4
+!i10b 1
+R5
+Z42 !s90 -reportprogress|300|-2008|-work|work|/home/victor/insper/6-sem/descomp/aula5/ULASomaSub.vhd|
+Z43 !s107 /home/victor/insper/6-sem/descomp/aula5/ULASomaSub.vhd|
+!i113 1
+R6
+R7
+Acomportamento
+R14
+R1
+R2
+DEx4 work 10 ulasomasub 0 22 oE`DhKbdP0c>K29STKkEJ1
+!i122 0
+l20
+L14 15
+V4ZnafglXB4MR6o`i]HgUd3
+!s100 PPHK?Ea<fLSQk[gmo4l;T3
+R3
+33
+R4
+!i10b 1
+R5
+R42
+R43
+!i113 1
+R6
+R7
