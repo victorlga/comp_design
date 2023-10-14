@@ -23,6 +23,8 @@ architecture comportamento of decoderGeneric is
   constant ANND : std_logic_vector(3 downto 0) := "1011";
   
   begin
+  -- Decodificador de Opcode, gera os sinais de controle que serão utilizados
+  -- pelos componentes do CPU.
 	sinais_controle <= "000000000000" when opcode = NOP else
 							 "000000110010" when opcode = LDA else
 							 "000000101010" when opcode = SOMA else

@@ -9,6 +9,7 @@ end entity;
 
 architecture comportamento of decoder3x8 is
   begin
+    -- valor codificado pela entrada será 1, outros serão 0
     saida(7) <= '1' when (entrada = "111") else '0';
     saida(6) <= '1' when (entrada = "110") else '0';
     saida(5) <= '1' when (entrada = "101") else '0';

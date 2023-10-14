@@ -14,7 +14,7 @@ entity memoriaROM is
 end entity;
 
 architecture assincrona of memoriaROM is
-	
+    -- Define  opcodes que podem ser usados no programa
   constant NOP  : std_logic_vector(3 downto 0) := "0000";
   constant LDA  : std_logic_vector(3 downto 0) := "0001";
   constant SOMA : std_logic_vector(3 downto 0) := "0010";

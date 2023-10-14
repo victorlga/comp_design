@@ -49,7 +49,7 @@ architecture arquitetura of cpu is
 	
 	signal nextProgramAddress : std_logic_vector (addrWidth-1 downto 0);
 	signal programAddress: std_logic_vector (addrWidth-1 downto 0);
-   signal incrementedAddress : std_logic_vector (addrWidth-1 downto 0);
+    signal incrementedAddress : std_logic_vector (addrWidth-1 downto 0);
 	signal returnedAddress : std_logic_vector (addrWidth-1 downto 0);
 	
 	signal logicalDeviation_Out : std_logic_vector(1 downto 0);
@@ -59,14 +59,14 @@ architecture arquitetura of cpu is
 	
 begin
 
--- O port map completo do Mux.
+-- MUX que seleciona qual valor sera usado na entrada A da ULA: valor imediato ou valor da memoria RAM
 Mux_EntradaB_ULA :  entity work.MuxGenerico2x1  generic map (larguraDados => dataWidth)
         port map( entradaA_Mux => Data_In,
                  entradaB_Mux =>  ROM_Data_ImmValue,
                  seletor_Mux => selMux,
                  saida_Mux => ULA_Data_In_Mux);
 
--- O port map completo do Acumulador.
+-- O port map completo do bloco de registradores.
 Bloco_Reg : entity work.blocoRegistrador   generic map (larguraDados => dataWidth)
           port map (DIN => ULA_Data_Out, 
 						  DOUT => ULA_Data_In_Reg_A,
@@ -75,14 +75,15 @@ Bloco_Reg : entity work.blocoRegistrador   generic map (larguraDados => dataWidt
 						  CLK => CLK,
 						  RST => '0');
 
--- O port map completo do Program Counter.
+-- Registrador que guarda o valor do proximo endereco do programa
 PC : entity work.registradorGenerico   generic map (larguraDados => addrWidth)
           port map (DIN =>  nextProgramAddress,
 						  DOUT => programAddress,
 						  ENABLE => '1',
 						  CLK => CLK,
 						  RST => RST);
-			 
+
+-- Registrador que guarda valor do último endereço + 1 antes de chamar uma subrotina
 Reg_Retorno : entity work.registradorGenerico   generic map (larguraDados => addrWidth)
           port map (DIN => incrementedAddress,
 						  DOUT => returnedAddress,
@@ -90,25 +91,29 @@ Reg_Retorno : entity work.registradorGenerico   generic map (larguraDados => add
 						  CLK => CLK,
 						  RST => '0');
 
+-- Adiciona 1 no valor do ultimo endereço do programa usado
 incrementa_PC :  entity work.somaConstante  generic map (larguraDados => addrWidth, constante => 1)
 			 port map (entrada => programAddress,
 						  saida => incrementedAddress);
 
+-- Seleciona qual endereco sera usado no PC (ultimo endereco + 1, endereco de retorno ou endereco de desvio)
 Mux_Prox_PC : entity work.MuxGenerico4x1 generic map (larguraDados => dataWidth + 1)
         port map (entrada0_Mux => incrementedAddress,
                   entrada1_Mux =>  ROM_Data_ImmValue_Jmp,
-					   entrada2_Mux => returnedAddress,
-					   entrada3_Mux => (others => '0'),
+				  entrada2_Mux => returnedAddress,
+				  entrada3_Mux => (others => '0'),
                   seletor_Mux => logicalDeviation_Out,
                   saida_Mux =>  nextProgramAddress);						
 
+-- Define o valor da flag que guarda se valores nas entradas da ULA são iguais
 Flag_Equal : entity work.FlipFlop
 		  port map (DIN => Flag_In,
 					   DOUT => Flag_Out,
 					   ENABLE => enableFlagEqual,
 					   CLK => CLK,
 					   RST => '0');
-		  
+
+-- Define valor que seleciona qual o proximo endereco do PC no MUX_Prox_PC
 Deviation : entity work.logicaDesvio
 		  port map (entrada_flag => Flag_Out,
 						entrada_jeq => jeq,
@@ -125,6 +130,7 @@ ULA : entity work.ULASomaSub  generic map(larguraDados => dataWidth)
 						  seletor => ULA_Operation,
 						  zero => Flag_In);
 
+-- Decodificador de instrucoes, transforma opcode em sinais de controle
 Dec_Instruction : entity work.decoderGeneric
 				port map (opcode => opcode,
 							 sinais_controle => controlSignal);

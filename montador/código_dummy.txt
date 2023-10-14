@@ -1,0 +1,135 @@
+### INÍCIO:
+
+Ler o botão de incremento de contagem (KEY0):
+
+-   Caso tenha sido pressionado, desviar para a sub-rotina de incremento de valor.
+
+Escrever os valores das variáveis nos respectivos displays (pode ser uma sub-rotina).
+
+Ler o botão de configuração do limite de incremento (KEY1):
+
+-   Caso esteja pressionado, desviar para a sub-rotina de configuração do limite de incremento.
+
+Verificar se o limite de contagem foi alcançado (pode ser uma sub-rotina).
+
+Ler o botão de reiniciar contagem (FPGA_RESET):
+
+-   Caso esteja pressionado, desviar para a sub-rotina de reiniciar contagem.
+
+Desviar para o **INÍCIO**.
+
+################################################################################################################################
+(Espaço de memória não utilizado)
+################################################################################################################################
+
+### Limite de Incremento
+# Digamos que o contador deve contar até um determinado valor limite. Para que isso ocorra, é necessário que armazenemos esse limite na memória e durante a contagem, verifiquemos se o mesmo foi alcançado. Esta rotina trata do armazenamento desse limite na posições adequadas da memória.
+
+Ler o valor das chaves que definem o limite de contagem para as unidades:
+
+-   Escrever o valor na posição de memória desse limite.
+
+Aguardar o pressionamento de KEY1:
+
+-   Ler o valor das chaves que definem o limite de contagem para as dezenas:
+
+-   Escrever o valor na posição de memória desse limite.
+
+Aguardar o pressionamento de KEY1:
+
+-   Ler o valor das chaves que definem o limite de contagem para as centenas:
+
+-   Escrever o valor na posição de memória desse limite.
+
+Retornar da sub-rotina.
+
+################################################################################################################################
+(Espaço de memória não utilizado)
+################################################################################################################################
+
+### Incrementando a Contagem
+# Quando o incremento da contagem é executado, devemos verificar se não ocorre o “vai um” (carry out) entre os dígitos que representam o valor incrementado.
+
+Limpar o _flag_ de botão 0 apertado (acessar endereço 511).
+
+Verificar _flag_ de proceder com a contagem:
+
+-   Caso esteja setado, deve retornar da sub-rotina.
+
+Incrementar o valor de unidades da contagem:
+
+-   Comparar o resultado do incremento das unidades com dez:
+
+    -   Se for igual, escrever zero nas unidades e incrementar a dezena.
+
+    -   Se não for igual, escrever o valor incrementado nas unidades e retornar da sub-rotina.
+
+-   Comparar o resultado do incremento das dezenas com dez:
+
+    -   Se for igual, escrever zero nas dezenas e incrementar a centena.
+
+    -   Se não for igual, escrever o valor incrementado nas dezenas e retornar da sub-rotina.
+
+-   Comparar o resultado do incremento das centenas com dez:
+
+    -   Se for igual, escrever zero nas centenas e incrementar os milhares.
+
+    -   Se não for igual, escrever o valor incrementado nas centenas e retornar da sub-rotina.
+
+Continuar esse procedimento até chegar ao último valor a ser comparado, por exemplo: as centenas de milhares.
+
+-   Comparar o resultado do incremento das centenas de milhares com dez:
+
+    -   Se for igual, acender o LED indicador de _Overflow_ e ativar o _flag_ de inibir contagem.
+
+    -   Se não for igual, escrever o valor incrementado nas centenas de milhares e retornar da sub-rotina.
+
+Retornar da sub-rotina.
+
+################################################################################################################################
+(Espaço de memória não utilizado)
+################################################################################################################################
+
+### Verificação do Limite de Contagem
+# Caso o limite de contagem seja atingido, devemos:
+# Parar a contagem;
+# Indicar o estado de limite atingido.
+
+Deve comparar cada posição de memória do limite com a posição de memória da contagem atual:
+
+-   Para as unidades;
+
+-   Para as dezenas;
+
+-   Para as centenas;
+
+-   Para as unidades de milhares;
+
+-   Para as dezenas de milhares;
+
+-   Para as centenas de milhares.
+
+Caso todas comparações resultem iguais, devemos:
+
+-   Ativar o _flag_ de inibir contagem;
+
+-   Acender o LED de **Limite Atingido**.
+
+Retornar da sub-rotina.
+
+################################################################################################################################
+(Espaço de memória não utilizado)
+################################################################################################################################
+
+### Reinício de Contagem
+# Para reiniciar a contagem, devemos limpar os valores de contagem, limpar os indicadores de estado e reabilitar a contagem.
+
+Escrever zero nas variáveis de contagem.
+
+Limpar o _flag_ de inibir contagem.
+
+Apagar o LED de _Overflow_.
+
+Apagar o LED de **Limite Atingido**.
+
+Retornar da sub-rotina.

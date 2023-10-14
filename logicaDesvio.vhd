@@ -15,6 +15,10 @@ end entity;
 architecture comportamento of logicaDesvio is
 
 begin
+	-- saida(0) = 1 se for para desviar e 0 se for para continuar.
+	-- Deve desviar se for um jump ou se for um jeq e a flag_igual estiver setada ou se for um jsr
 	saida(0) <= entrada_jmp or (entrada_jeq and entrada_flag) or entrada_jsr;
+	-- saida(1) = 1 se for para retornar para ultimo endereco + 1 antes do desvio 
+	-- e 0 se for para continuar
 	saida(1) <= entrada_ret;
 end architecture;
