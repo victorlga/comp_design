@@ -88,7 +88,9 @@ architecture arquitetura of projeto1 is
   
   signal HEX_Data : std_logic_vector(3 downto 0); -- Dado que vai ser mostrado nos displays de 7 segmentos
   
-  signal clearRead : std_logic; -- Sinal que limpa o enableReadMem
+  signal clearReadKey0 : std_logic; -- Sinal que limpa o flipflop_key0
+  signal clearReadKey1 : std_logic; -- Sinal que limpa o flipflop_key1
+  
   signal flipflopKey0_Out : std_logic; -- Sinal que sai do flipflop do botão 0
   signal flipflopKey1_Out : std_logic; -- Sinal que sai do flipflop do botão 1
   
@@ -152,12 +154,13 @@ DECODER1 : entity work.blockDecoder
 							 enableKey2 => enableKey2,
 							 enableKey3 => enableKey3,
 							 enableReset => enableReset,
-							 clearRead => clearRead);
+							 clearReadKey0 => clearReadKey0,
+							 clearReadKey1 => clearReadKey1);
 
 -- CPU com a ULA, program counters, decoder de instruções, desvio de intruções e bloco de registradores
 CPU : entity work.cpu	generic map (dataWidth => dataWidth, addrWidth => addrWidth, instructionWidth => instructionWidth)
 				port map (CLK => CLK,
-							 RST => (not FPGA_RESET_N),
+							 RST => '0',
 							 Rd => enableReadMem,
 							 Wd => enableWriteMem,
 							 ROM_Address => ROM_Address,
@@ -306,7 +309,7 @@ FlipFlop_Key0 : entity work.FlipFlop
 							 DOUT => flipflopKey0_Out,
 							 ENABLE => '1',
 							 CLK => edgeDet_Key0_Out,
-							 RST => clearRead);
+							 RST => clearReadKey0);
 
 -- FlipFlops para guardar valor do botão 1
 FlipFlop_Key1 : entity work.FlipFlop
@@ -314,7 +317,7 @@ FlipFlop_Key1 : entity work.FlipFlop
 							 DOUT => flipflopKey1_Out,
 							 ENABLE => '1',
 							 CLK => edgeDet_Key1_Out,
-							 RST => clearRead);			 
+							 RST => clearReadKey1);			 
 
 -- Preenche o valor de Data_In com a saída dos componentes 
 -- que são mapeados pelos blocos de memória. Data_In é recebe

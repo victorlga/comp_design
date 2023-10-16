@@ -81,7 +81,7 @@ PC : entity work.registradorGenerico   generic map (larguraDados => addrWidth)
 						  DOUT => programAddress,
 						  ENABLE => '1',
 						  CLK => CLK,
-						  RST => RST);
+						  RST => '0');
 
 -- Registrador que guarda valor do último endereço + 1 antes de chamar uma subrotina
 Reg_Retorno : entity work.registradorGenerico   generic map (larguraDados => addrWidth)

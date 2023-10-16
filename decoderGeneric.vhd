@@ -21,6 +21,7 @@ architecture comportamento of decoderGeneric is
   constant JSR : std_logic_vector(3 downto 0) := "1001";
   constant RET : std_logic_vector(3 downto 0) := "1010";
   constant ANND : std_logic_vector(3 downto 0) := "1011";
+  constant JSRE : std_logic_vector(3 downto 0) := "1100";
   
   begin
   -- Decodificador de Opcode, gera os sinais de controle que serão utilizados
@@ -37,5 +38,6 @@ architecture comportamento of decoderGeneric is
 							 "100100000000" when opcode = JSR else
 							 "001000000000" when opcode = RET else
 							 "000000111010" when opcode = ANND else
+							 "100010000000" when opcode = JSRE else
 							 "000000000000";  -- NOP para os entradas Indefinidas
 end architecture;

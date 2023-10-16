@@ -28,8 +28,7 @@ entity blockDecoder is
 			enableKey2 : out std_logic;
 			enableKey3 : out std_logic;
 			enableReset : out std_logic;
-			clearReadKey0 : out std_logic;
-			clearReadKey1 : out std_logic
+			clearRead : out std_logic
   );
 end entity;
 
@@ -39,14 +38,14 @@ architecture comportamento of blockDecoder is
 	signal selector : std_logic_vector(7 downto 0);
 
 	signal blockAddress : std_logic_vector(2 downto 0);
-	signal values : std_logic_vector(2 downto 0);
+	signal value : std_logic_vector(2 downto 0);
 	signal enableHEX : std_logic;
 	
 begin
 	
 	-- Decodifica qual endereço do bloco de memória será utilizado
 	DEC_UNITY : entity work.decoder3x8
-					port map (entrada => values,
+					port map (entrada => value,
 								saida => selector);
 
 	-- Decodifica qual bloco de memória será utilizado
@@ -55,7 +54,7 @@ begin
 								saida => memoryBlock);
 
 	blockAddress <= Data_Address(8 downto 6);			 
-	values <= Data_Address(2 downto 0);
+	value <= Data_Address(2 downto 0);
 
 	-- Decodifica qual periférico será utilizado, criando os sinais de enable
 	enableHEX <= Data_Address(5);
@@ -81,7 +80,6 @@ begin
 	enableKey3 <= (enableReadMem and memoryBlock(5) and selector(3) and enableHEX);
 	enableReset <= (enableReadMem and memoryBlock(5) and selector(4) and enableHEX);
 
-	clearReadKey0 <= (Data_Address(0) and Data_Address(1) and Data_Address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and enableWriteMem);
-	clearReadKey1 <= (not Data_Address(0) and Data_Address(1) and Data_Address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and enableWriteMem);
+	clearRead <= (Data_Address(0) and Data_Address(1) and Data_Address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and enableWriteMem);
 
 end architecture;

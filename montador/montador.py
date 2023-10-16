@@ -93,6 +93,38 @@ mne =	{
        "JSR":   "9 ",
        "RET":   "A ",
        "ANND":  "B ",
+       "JSRE":  "C ",
+}
+
+tagRAM = {
+    "Unid": 0,
+    "Dezen": 1,
+    "Cent": 2,
+    "Mil": 3,
+    "DezMil" : 4,
+    "CenMil" : 5,
+    "ContU": 57,
+    "ContD": 58,
+    "ContC": 59,
+    "ContM": 60,
+    "ContDM" : 61,
+    "ContCM" : 62,
+    "FlagInib" : 63,
+    "LED8" : 257,
+    "LED9" : 258,
+    "HEX0" : 288,
+    "HEX1" : 289,
+    "HEX2" : 290,
+    "HEX3" : 291,
+    "HEX4" : 292,
+    "HEX5" : 293,
+    "SW" : 320,
+    "Key0" : 352,
+    "Key1" : 353,
+    "RST" : 356,
+    "LimpK1" : 510,
+    "LimpK0" : 511,
+
 }
 
 #dicionário para armazenar os labels
@@ -161,6 +193,7 @@ def trataRegistrador(line):
     if "REG" in line:
         line = line.split("  REG")
         reg = int(line[1][0])
+        line.append(line[1].split(" ")[1])
         reg = bin(reg)[2:].zfill(2)
     else:
         line = line.split(' ')
@@ -170,6 +203,19 @@ def trataRegistrador(line):
     line = ''.join(line)
     return line
 
+def trataTagRAM(line):
+    line = line.split(" ")
+
+    if len(line) > 2:
+        tag = line[2]
+        lista_tags = tagRAM.keys()
+
+        if tag in lista_tags:
+            line[2] = "@" + str(tagRAM[tag])
+
+    line = ' '.join(line)
+    return line
+
 #Troca os jmp labels por jmp com os endereços de memória
 #e substitui labels por nop
 def trataLabel(lines):
@@ -177,22 +223,33 @@ def trataLabel(lines):
 
     for line in lines:
         line = line.split("#")
+        
         instrucao = line[0]
         if ":" in instrucao:
             instrucao = instrucao.split(":")
             label[instrucao[0]] = str(cont)
-            instrucao = "NOP\n"
+            print(cont)
+            instrucao = "NOP"
         
-        elif "." in instrucao:
+        lines[cont] = instrucao#+ "#" + line[1] if "#" in lines[cont] else instrucao + "\n"
+        cont += 1
+
+    cont = 0
+    for line in lines:
+        line = line.split("#")
+        
+        instrucao = line[0]
+
+        if "." in instrucao:
             instrucao = instrucao.split(".")
-            label_name = instrucao[1].rstrip("\t")
+            label_name = instrucao[1].split(" ")[0]
             instrucao[1] = "@" + label[label_name] + "\t"
             instrucao = ''.join(instrucao)
         
-        lines[cont] = instrucao + "#" + line[1] if "#" in lines[cont] else instrucao + "\n"
+        lines[cont] = instrucao#+ "#" + line[1] if "#" in lines[cont] else instrucao + "\n"
 
         cont += 1
-        
+
     return lines
         
 
@@ -208,7 +265,7 @@ def montaBIN():
         lines = trataLabel(lines) #Troca os jmp labels por jmp com os endereços de memória e substitui labels por nop
 
         for line in lines:        
-        
+            trataTagRAM(line)
             #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
             if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
                 line = line.replace("\n", "")
@@ -219,12 +276,13 @@ def montaBIN():
                 comentarioLine = defineComentario(line).replace("\n","") #Define o comentário da linha.
                 instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução.
                 
+                instrucaoLine = trataTagRAM(instrucaoLine)
                 instrucaoLine = trataMnemonico(instrucaoLine) #Trata o mnemonico.
                 instrucaoLine = trataRegistrador(instrucaoLine) #Trata o registrador.
 
                 if '@' in instrucaoLine: #Se encontrar o caractere arroba '@'
                     instrucaoLine = converteArroba(instrucaoLine) #converte o número após o caractere.
-                
+    
                 elif '$' in instrucaoLine: #Se encontrar o caractere cifrão '$'
                     instrucaoLine = converteCifrao(instrucaoLine) #converte o número após o caractere.
                 
@@ -239,59 +297,10 @@ def montaBIN():
                 f.write(line) #Escreve no arquivo BIN.txt
                 #print(line,end = '') #Print apenas para debug
 
-#Monta arquivo initROM.mif com o código formatado para .mif
-def montaMIF():
-    with open(outputMIF, "r") as f: #Abre o arquivo .mif
-        headerMIF = f.readlines() #Faz a leitura das linhas do arquivo,
-                                #para fazer a aquisição do header
-        
-        
-    with open(outputBIN, "r") as f: #Abre o arquivo BIN
-        lines = f.readlines() #Faz a leitura das linhas do arquivo
-        
-        
-    with open(outputMIF, "w+") as f:  #Abre o destino .mif novamente
-                                    #agora para preenchê-lo com o pograma
-
-        cont = 0 #Cria uma variável para contagem
-        
-        #########################################
-        #Preenche com o header lido anteriormente 
-        for lineHeader in headerMIF:      
-            if cont < 21:           #Contagem das linhas de cabeçalho
-                f.write(lineHeader) #Escreve no arquivo se saída .mif o cabeçalho (21 linhas)
-            cont = cont + 1         #Incrementa varíavel de contagem
-    #-----------------------------------------
-    ##########################################
-    
-        for line in lines: #Varre as linhas do código formatado para a ROM (VHDL)
-        
-            replacements = [('t', ''), ('m', ''), ('p', ''), ('(', ''), (')', ''), ('=', ''), ('x', ''), ('"', '')] #Define os caracteres que serão excluídos
-            
-            ##########################################
-            #Remove os caracteres que foram definidos
-            for char, replacement in replacements:
-                if char in line:
-                    line = line.replace(char, replacement)
-            #-----------------------------------------
-            ##########################################
-                    
-            line = line.split('#') #Remove o comentário da linha
-            
-            if "\n" in line[0]:
-                line = line[0] 
-            else:
-                line = line[0] + '\n' #Insere a quebra de linha ('\n') caso não tenha
-
-            f.write(line) #Escreve no arquivo initROM.mif
-        f.write("END;") #Acrescente o indicador de finalização da memória. (END;)
-
 
 #Função principal
 def main():
     montaBIN()
-    ### MIF ainda não diferencia quando deve ser binario ou hexadecimal
-    montaMIF()
 
 if __name__ == "__main__":
     main()
