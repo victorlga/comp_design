@@ -76,7 +76,6 @@ Regras:
 
 inputASM = 'montador/ASM.txt' #Arquivo de entrada de contém o assembly
 outputBIN = 'montador/BIN.txt' #Arquivo de saída que contém o binário formatado para VHDL
-outputMIF = 'montador/initROM.mif' #Arquivo de saída que contém o binário formatado para .mif
 
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)
@@ -103,12 +102,14 @@ tagRAM = {
     "Mil": 3,
     "DezMil" : 4,
     "CenMil" : 5,
-    "ContU": 57,
-    "ContD": 58,
-    "ContC": 59,
-    "ContM": 60,
-    "ContDM" : 61,
-    "ContCM" : 62,
+    "Val1" : 10,
+    "Val10" : 11,
+    "LimU": 57,
+    "LimD": 58,
+    "LimC": 59,
+    "LimM": 60,
+    "LimDM" : 61,
+    "LimCM" : 62,
     "FlagInib" : 63,
     "LED8" : 257,
     "LED9" : 258,
@@ -124,7 +125,6 @@ tagRAM = {
     "RST" : 356,
     "LimpK1" : 510,
     "LimpK0" : 511,
-
 }
 
 #dicionário para armazenar os labels
@@ -228,10 +228,9 @@ def trataLabel(lines):
         if ":" in instrucao:
             instrucao = instrucao.split(":")
             label[instrucao[0]] = str(cont)
-            print(cont)
             instrucao = "NOP"
         
-        lines[cont] = instrucao#+ "#" + line[1] if "#" in lines[cont] else instrucao + "\n"
+        lines[cont] = instrucao
         cont += 1
 
     cont = 0
@@ -246,7 +245,7 @@ def trataLabel(lines):
             instrucao[1] = "@" + label[label_name] + "\t"
             instrucao = ''.join(instrucao)
         
-        lines[cont] = instrucao#+ "#" + line[1] if "#" in lines[cont] else instrucao + "\n"
+        lines[cont] = instrucao
 
         cont += 1
 

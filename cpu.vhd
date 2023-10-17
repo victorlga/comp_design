@@ -19,7 +19,8 @@ entity cpu is
 	 
 	 Data_Address : out std_logic_vector(addrWidth - 1 downto 0);
 	 Data_In : in std_logic_vector(dataWidth - 1 downto 0);
-	 Data_Out : out std_logic_vector(dataWidth - 1 downto 0)
+	 Data_Out : out std_logic_vector(dataWidth - 1 downto 0);
+	 Bloco_Reg_In : out std_logic_vector (dataWidth-1 downto 0)
   );
 end entity;
 
@@ -45,7 +46,7 @@ architecture arquitetura of cpu is
 	
 	signal ULA_Data_In_Mux : std_logic_vector (dataWidth-1 downto 0);
 	signal ULA_Data_Out : std_logic_vector (dataWidth-1 downto 0);
-	signal ULA_Data_In_Reg_A : std_logic_vector (dataWidth-1 downto 0);
+	signal ULA_Data_In_Bloc_Reg : std_logic_vector (dataWidth-1 downto 0);
 	
 	signal nextProgramAddress : std_logic_vector (addrWidth-1 downto 0);
 	signal programAddress: std_logic_vector (addrWidth-1 downto 0);
@@ -69,7 +70,7 @@ Mux_EntradaB_ULA :  entity work.MuxGenerico2x1  generic map (larguraDados => dat
 -- O port map completo do bloco de registradores.
 Bloco_Reg : entity work.blocoRegistrador   generic map (larguraDados => dataWidth)
           port map (DIN => ULA_Data_Out, 
-						  DOUT => ULA_Data_In_Reg_A,
+						  DOUT => ULA_Data_In_Bloc_Reg,
 						  ENABLE => enableBlocoReg,
 						  ADDR => Reg_Address,
 						  CLK => CLK,
@@ -124,7 +125,7 @@ Deviation : entity work.logicaDesvio
 					  
 -- O port map completo da ULA:
 ULA : entity work.ULASomaSub  generic map(larguraDados => dataWidth)
-          port map (entradaA => ULA_Data_In_Reg_A,
+          port map (entradaA => ULA_Data_In_Bloc_Reg,
 						  entradaB => ULA_Data_In_Mux,
 						  saida => ULA_Data_Out,
 						  seletor => ULA_Operation,
@@ -137,11 +138,12 @@ Dec_Instruction : entity work.decoderGeneric
 
 -- Saidas da CPU
 
-Data_Out <= ULA_Data_In_Reg_A;
+Data_Out <= ULA_Data_In_Bloc_Reg;
 Data_Address <= ROM_Data(addrWidth - 1 downto 0);
 ROM_Address <= programAddress;
 
 Rd <= controlSignal(1);
 Wd <= controlSignal(0);
+Bloco_Reg_In <= Data_In;--ULA_Data_Out;
 
 end architecture;
