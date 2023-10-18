@@ -6,7 +6,7 @@ entity projeto1 is
   generic ( dataWidth : natural := 8;
 		    addrWidth : natural := 9;
 		    instructionWidth : natural := 15;
-		    simulacao : boolean := TRUE -- para gravar na placa, altere de TRUE para FALSE
+		    simulacao : boolean := FALSE -- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
     CLOCK_50 : in std_logic; -- clock de 50 MHz
@@ -35,33 +35,6 @@ entity projeto1 is
 	HEX3: out std_logic_vector(6 downto 0);
 	HEX4: out std_logic_vector(6 downto 0);
 	HEX5: out std_logic_vector(6 downto 0)
-	--enableLed9OUT : out std_logic;
-	--		enableLed8OUT : out std_logic;
-	--		enableLedVectorOUT : out std_logic;
-	--		
-	--		enableMemRamOUT : out std_logic;file:///home/victor/insper/6-sem/descomp/projeto1/Waveform.vwf
-
-	--		
-	--		enableHEX0OUT : out std_logic;
-	--		enableHEX1OUT : out std_logic;
-	--		enableHEX2OUT : out std_logic;
-	--		enableHEX3OUT : out std_logic;
-	--		enableHEX4OUT : out std_logic;
-	--		enableHEX5OUT : out std_logic;
-	--		
-	--		enableSWVectorOUT : out std_logic;
-	--		enableSW8OUT : out std_logic;
-	--		enableSW9OUT : out std_logic;
-	--		
-	--		enableKey0OUT : out std_logic;
-	--		enableKey1OUT : out std_logic;
-	--		enableKey2OUT : out std_logic;
-	--		enableKey3OUT : out std_logic;
-	--		enableResetOUT : out std_logic;
-	--		clearReadKey0OUT : out std_logic;
-	--		clearReadKey1OUT : out std_logic
-	--Bloco_Reg_Out : out std_logic_vector (dataWidth-1 downto 0)
-	--key0_OUT : out std_logic;
   );
 end entity;
 
@@ -145,9 +118,9 @@ begin
 gravar:  if simulacao generate
 	CLK <= KEY(3); -- Para simular, o clock é o botão 0
 else generate
-	detectorSub0: work.edgeDetector(bordaSubida)
-        port map (clk => CLOCK_50, entrada => (not KEY(3)), saida => CLK);
-	--CLK <= CLOCK_50;
+	--detectorSub0: work.edgeDetector(bordaSubida)
+   --     port map (clk => CLOCK_50, entrada => (not KEY(3)), saida => CLK);
+	CLK <= CLOCK_50;
 end generate;
 
 
@@ -207,8 +180,8 @@ CPU : entity work.cpu	generic map (dataWidth => dataWidth, addrWidth => addrWidt
 							 ROM_Data => ROM_Data,
 							 Data_Address => Data_Address,
 							 Data_In => Data_In,
-							 Data_Out => Data_Out,--);
-							 Bloco_Reg_In => Bloco_Reg_In);
+							 Data_Out => Data_Out);
+							 --Bloco_Reg_In => Bloco_Reg_In);
 
 -- FlipFlops para guardar valor do led9
 FlipFlop9 : entity work.FlipFlop
@@ -228,9 +201,10 @@ FlipFlop8 : entity work.FlipFlop
 
 -- Registrador para guardar valor do vetor de leds
 RegisterVector : entity work.registradorGenerico
-				port map (DIN => Bloco_Reg_In,--RAM_Data_In,
+				port map (--DIN => Bloco_Reg_In,
+							 DIN => RAM_Data_In,
 							 DOUT => LedV,
-							 ENABLE => '1',--enableLedVector,
+							 ENABLE => enableLedVector,
 							 CLK => CLK,
 							 RST => '0');
 
@@ -308,8 +282,8 @@ RegisterHEX4 : entity work.registradorGenerico generic map (larguraDados => 4)
 
 -- Conversor de hexadecimal para 7 segmentos para o display4
 HexDisplay4 :  entity work.conversorHex7Seg
-        port map(dadoHex => ROM_Address(3 downto 0), 
-					  --dadoHex => encodedHex4,
+        port map(--dadoHex => ROM_Address(3 downto 0), 
+					  dadoHex => encodedHex4,
                  apaga => '0',
                  negativo => '0',
                  overFlow => '0',
@@ -325,8 +299,8 @@ RegisterHEX5 : entity work.registradorGenerico generic map (larguraDados => 4)
 					  
 -- Conversor de hexadecimal para 7 segmentos para o display5
 HexDisplay5 :  entity work.conversorHex7Seg
-        port map(dadoHex => ROM_Address(7 downto 4),
-					  --dadoHex => encodedHex5,
+        port map(--dadoHex => ROM_Address(7 downto 4),
+					  dadoHex => encodedHex5,
                  apaga => '0',
                  negativo => '0',
                  overFlow => '0',
@@ -362,15 +336,26 @@ FlipFlop_Key1 : entity work.FlipFlop
 							 CLK => edgeDet_Key1_Out,
 							 RST => clearReadKey1);		 
 
+
+key0Tristate8 : entity work.buffer_3_state_8binario
+				port map (entrada => flipflopKey0_Out,
+							habilita => enableKey0,
+							saida => Data_In(0));
+		
+key1Tristate8 : entity work.buffer_3_state_8binario
+				port map (entrada => flipflopKey1_Out,
+							habilita => enableKey1,
+							saida => Data_In(0));
+							 
 -- Preenche o valor de Data_In com a saída dos componentes 
 -- que são mapeados pelos blocos de memória. Data_In é recebe
 -- a saída do componente no bloco e endereço codificado por
 -- Data_Address.
 Data_In(0) <= SW(8) when enableSW8 else 'Z';
 Data_In(0) <= SW(9) when enableSW9 else 'Z';
-Data_In(0) <= (not KEY(0)) when enableKey0 else 'Z';
+--Data_In(0) <= (not KEY(0)) when enableKey0 else 'Z';
 --Data_In(0) <= flipflopKey0_Out when enableKey0 else 'Z';
-Data_In(0) <= (not KEY(1)) when enableKey1 else 'Z';
+--Data_In(0) <= (not KEY(1)) when enableKey1 else 'Z';
 --Data_In(0) <= flipflopKey1_Out when enableKey1 else 'Z';
 Data_In(0) <= (not KEY(2)) when enableKey2 else 'Z';
 Data_In(0) <= (not KEY(3)) when enableKey3 else 'Z';
@@ -382,13 +367,8 @@ RAM_Data_In <= Data_Out;
 
 -- Guarda o valor de Data_Out no sinal que vai ser mostrado em algum dos displays de 7 segmentos
 HEX_Data <= Data_Out(3 downto 0);
---Data_OutOUT <= Data_Out;
---Data_InOUT <= Data_In;
 
 -- Preenche o vetor de leds com os valores de Led9, Led8 e LedV
 LEDR <= Led9 & Led8 & LedV;
-
---ROM_AddressOUT <= ROM_Address; 
---ROM_DataOUT <= ROM_Data;
 
 end architecture;

@@ -19,8 +19,8 @@ entity cpu is
 	 
 	 Data_Address : out std_logic_vector(addrWidth - 1 downto 0);
 	 Data_In : in std_logic_vector(dataWidth - 1 downto 0);
-	 Data_Out : out std_logic_vector(dataWidth - 1 downto 0);
-	 Bloco_Reg_In : out std_logic_vector (dataWidth-1 downto 0)
+	 Data_Out : out std_logic_vector(dataWidth - 1 downto 0)--;
+--	 Bloco_Reg_In : out std_logic_vector (dataWidth-1 downto 0)
   );
 end entity;
 
@@ -101,8 +101,8 @@ incrementa_PC :  entity work.somaConstante  generic map (larguraDados => addrWid
 Mux_Prox_PC : entity work.MuxGenerico4x1 generic map (larguraDados => dataWidth + 1)
         port map (entrada0_Mux => incrementedAddress,
                   entrada1_Mux =>  ROM_Data_ImmValue_Jmp,
-				  entrada2_Mux => returnedAddress,
-				  entrada3_Mux => (others => '0'),
+						entrada2_Mux => returnedAddress,
+						entrada3_Mux => (others => '0'),
                   seletor_Mux => logicalDeviation_Out,
                   saida_Mux =>  nextProgramAddress);						
 
@@ -144,6 +144,6 @@ ROM_Address <= programAddress;
 
 Rd <= controlSignal(1);
 Wd <= controlSignal(0);
-Bloco_Reg_In <= Data_In;--ULA_Data_Out;
+--Bloco_Reg_In <= Data_In;--ULA_Data_Out;
 
 end architecture;

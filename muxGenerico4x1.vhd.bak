@@ -15,6 +15,5 @@ architecture comportamento of muxGenerico4x1 is
   begin
     saida_MUX <= entrada1_MUX when (seletor_MUX = "01") else
 					  entrada2_MUX when (seletor_MUX = "10") else
-					  entrada3_MUX when (seletor_MUX = "11") else
 					  entrada0_MUX;
 end architecture;

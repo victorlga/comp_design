@@ -1,25 +1,17 @@
 LDI REG0 $0                 # Carrega 0 no registrador 0
-STA REG0 LimpK0             # Limpa a leitura de Key0
-STA REG0 LimpK1             # Limpa a leitura de Key1
-STA REG0 Unid               # Guarda o valor do registrador 0 no endereço 0 da RAM, o da unidade da contagem
-STA REG0 HEX0               # Guarda o valor do registrador 0 no endereço do HEX0
-STA REG0 Dezen              # Guarda o valor do registrador 0 no endereço 1 da RAM, o da dezena da contagem
-STA REG0 HEX1               # Guarda o valor do registrador 0 no endereço do HEX1
-STA REG0 Cent               # Guarda o valor do registrador 0 no endereço 2 da RAM, o da centena da contagem
-STA REG0 HEX2               # Guarda o valor do registrador 0 no endereço do HEX2
-STA REG0 Mil                # Guarda o valor do registrador 0 no endereço 3 da RAM, o do milhar da contagem
-STA REG0 HEX3               # Guarda o valor do registrador 0 no endereço do HEX3
-STA REG0 DezMil             # Guarda o valor do registrador 0 no endereço 4 da RAM, o da dezena de milhar da contagem
-STA REG0 HEX4               # Guarda o valor do registrador 0 no endereço do HEX4
-STA REG0 CenMil             # Guarda o valor do registrador 0 no endereço 5 da RAM, o da centena de milhar da contagem
-STA REG0 HEX5               # Guarda o valor do registrador 0 no endereço do HEX5
-STA REG0 FlagInib           # Desativa o flag que inibe contagem (Escreve 0 no último endereço da RAM)
-STA REG0 LED8               # Desliga o LED8
-STA REG0 LED9               # Desliga o LED9
-STA REG1 $1                 # Guarda o valor 1 no registrador 1
+STA REG0 Val0               # Guarda o valor do registrador 0 no endereço 9 da RAM, para comparar valores com 0
+LDI REG1 $1                 # Guarda o valor 1 no registrador 1
 STA REG1 Val1               # Guarda o valor do registrador 1 no endereço 10 da RAM, para comparar valores com 1
-STA REG2 $10                # Guarda o valor 10 no registrador 1
-STA REG2 Val10              # Guarda o valor do registrador 1 no endereço 10 da RAM, para comparar valores com 10
+LDI REG2 $10                # Guarda o valor 10 no registrador 1
+STA REG2 Val10              # Guarda o valor do registrador 2 no endereço 11 da RAM, para comparar valores com 10
+JSR .labelReiniciaCont      # Desvia para a label na sub-rotina de reiniciar a contagem
+LDI REG3 $9
+STA REG3 Unid
+STA REG3 Dezen
+STA REG3 Cent
+STA REG3 Mil
+STA REG3 DezMil
+STA REG3 CenMil
 NOP
 NOP
 NOP
@@ -43,7 +35,7 @@ JSRE .labelReiniciaCont     # Desvia para a label na sub-rotina de reiniciar a c
 JMP .labelInicio            # Desvia para a label no início do programa
 NOP
 NOP
-NOP -----------------------------------------------------------------------------------------------------------------------
+NOP
 labelIncrementaValor:       # Define a label chamada para incrementar valor de contagem
 LDA REG1 FlagInib           # Carrega o registrador 1 com a flag que inibe contagem
 CEQ REG1 Val1               # Compara o valor da flag com 1, verificando se a contagem deve ser inibida
@@ -128,68 +120,101 @@ NOP
 NOP
 NOP
 labelConfigLimInc:          # Define a label chamada para configurar limite de incremento
+labelNaoClicouK1U:          # Define a label chamada para aguardar o clique de Key1
 LDA REG0 SW                 # Carrega o valor das chaves 0 a 7 no registrador 0
+STA REG0 HEX0               # Guarda o valor do registrador 0 no endereço do HEX0
 STA REG0 LimU               # Guarda o valor do registrador 0 no endereço da unidade do limite de contagem
+LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
+STA REG0 LimpK1             # Limpa a leitura de Key1
+ANND REG1 Val1              # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
+CEQ REG1 Val0               # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
+JEQ .labelNaoClicouK1U      # Desvia para o label chamada quando o Key1 não foi clicado
 labelNaoClicouK1D:          # Define a label chamada para aguardar o clique de Key1
-LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
-STA REG0 LimpK1             # Limpa a leitura de Key1
-ANND REG1 $1                # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
-CEQ REG1 $0                 # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
-JEQ .labelNaoClicouK1D      # Desvia para o label chamada quando o Key1 não foi clicado
 LDA REG0 SW                 # Carrega o valor das chaves 0 a 7 no registrador 0
+STA REG0 HEX1               # Guarda o valor do registrador 0 no endereço do HEX1
 STA REG0 LimD               # Guarda o valor do registrador 0 no endereço da dezena do limite de contagem
+LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
+STA REG0 LimpK1             # Limpa a leitura de Key1
+ANND REG1 Val1              # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
+CEQ REG1 Val0               # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
+JEQ .labelNaoClicouK1D      # Desvia para o label chamada quando o Key1 não foi clicado
 labelNaoClicouK1C:          # Define a label chamada para aguardar o clique de Key1
-LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
-STA REG0 LimpK1             # Limpa a leitura de Key1
-ANND REG1 $1                # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
-CEQ REG1 $0                 # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
-JEQ .labelNaoClicouK1C      # Desvia para o label chamada quando o Key1 não foi clicado
 LDA REG0 SW                 # Carrega o valor das chaves 0 a 7 no registrador 0
+STA REG0 HEX2               # Guarda o valor do registrador 0 no endereço do HEX2
 STA REG0 LimC               # Guarda o valor do registrador 0 no endereço da centena do limite de contagem
-labelNaoClicouK1M:          # Define a label chamada para aguardar o clique de Key1
 LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
 STA REG0 LimpK1             # Limpa a leitura de Key1
-ANND REG1 $1                # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
-CEQ REG1 $0                 # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
-JEQ .labelNaoClicouK1M      # Desvia para o label chamada quando o Key1 não foi clicado
+ANND REG1 Val1              # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
+CEQ REG1 Val0               # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
+JEQ .labelNaoClicouK1C      # Desvia para o label chamada quando o Key1 não foi clicado
+labelNaoClicouK1M:         # Define a label chamada para aguardar o clique de Key1
 LDA REG0 SW                 # Carrega o valor das chaves 0 a 7 no registrador 0
+STA REG0 HEX3               # Guarda o valor do registrador 0 no endereço do HEX3
 STA REG0 LimM               # Guarda o valor do registrador 0 no endereço do milhar do limite de contagem
+LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
+STA REG0 LimpK1             # Limpa a leitura de Key1
+ANND REG1 Val1              # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
+CEQ REG1 Val0               # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado 
+JEQ .labelNaoClicouK1M     # Desvia para o label chamada quando o Key1 não foi clicado
 labelNaoClicouK1MD:         # Define a label chamada para aguardar o clique de Key1
-LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
-STA REG0 LimpK1             # Limpa a leitura de Key1
-ANND REG1 $1                # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
-CEQ REG1 $0                 # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado 
-JEQ .labelNaoClicouK1MD     # Desvia para o label chamada quando o Key1 não foi clicado
 LDA REG0 SW                 # Carrega o valor das chaves 0 a 7 no registrador 0
+STA REG0 HEX4               # Guarda o valor do registrador 0 no endereço do HEX4
 STA REG0 LimDM              # Guarda o valor do registrador 0 no endereço de dezena de milhar do limite de contagem
-labelNaoClicouK1MC:         # Define a label chamada para aguardar o clique de Key1
 LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
 STA REG0 LimpK1             # Limpa a leitura de Key1
-ANND REG1 $1                # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
-CEQ REG1 $0                 # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
-JEQ .labelNaoClicouK1MC     # Desvia para o label chamada quando o Key1 não foi clicado
+ANND REG1 Val1              # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
+CEQ REG1 Val0               # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
+JEQ .labelNaoClicouK1MD     # Desvia para o label chamada quando o Key1 não foi clicado
+labelNaoClicouK1MC:         # Define a label chamada para aguardar o clique de Key1
 LDA REG0 SW                 # Carrega o valor das chaves 0 a 7 no registrador 0
+STA REG0 HEX5               # Guarda o valor do registrador 0 no endereço do HEX5
 STA REG0 LimCM              # Guarda o valor do registrador 0 no endereço de centena de milhar do limite de contagem
+LDA REG1 Key1               # Carrega o valor de Key1 no registrador 1
+STA REG0 LimpK1             # Limpa a leitura de Key1
+ANND REG1 Val1              # Aplica máscara (b0000_0001) no registrador 1 para limpar os bits 7 até 1 e deixar somente o valor do bit zero
+CEQ REG1 Val0               # Compara se o valor do Key1 guardado no registrador 1 é igual a 0, ou seja, não foi clicado
+JEQ .labelNaoClicouK1MC     # Desvia para o label chamada quando o Key1 não foi clicado
+LDA REG1 Val0               # Carrega o valor 0 no registrador 1
+STA REG1 LimNDef            # Guarda o valor do registrador 1 no endereço 56 da RAM, para informar que foi definido limite de contagem
 RET                         # Retorna para endereço anterior a chamada da subrotina + 1
 NOP
 NOP
 NOP
 labelReiniciaCont:          # Define a label chamada para reiniciar contagem
-LDI REG0 $0                 # Carrega 0 no registrador 0
-STA REG0 Unid               # Guarda o valor do registrador 0 no endereço 0 da RAM, reiniciando unidades
-STA REG0 Dezen              # Guarda o valor do registrador 0 no endereço 1 da RAM, reiniciando dezenas
-STA REG0 Cent               # Guarda o valor do registrador 0 no endereço 2 da RAM, reiniciando centenas
-STA REG0 Mil                # Guarda o valor do registrador 0 no endereço 3 da RAM, reiniciando milhares
-STA REG0 DezMil             # Guarda o valor do registrador 0 no endereço 4 da RAM, reiniciando dezenas de milhares
-STA REG0 CenMil             # Guarda o valor do registrador 0 no endereço 5 da RAM, reiniciando centenas de milhares
+LDA REG0 Val0               # Carrega o valor 0 no registrador 0
+STA REG0 LimU               # Guarda o valor do registrador 0 no endereço da unidade do limite de contagem
+STA REG0 LimD               # Guarda o valor do registrador 0 no endereço da dezena do limite de contagem
+STA REG0 LimC               # Guarda o valor do registrador 0 no endereço da centena do limite de contagem
+STA REG0 LimM               # Guarda o valor do registrador 0 no endereço do milhar do limite de contagem
+STA REG0 LimDM              # Guarda o valor do registrador 0 no endereço de dezena de milhar do limite de contagem
+STA REG0 LimCM              # Guarda o valor do registrador 0 no endereço de centena de milhar do limite de contagem
+STA REG0 LimpK0             # Limpa a leitura de Key0
+STA REG0 LimpK1             # Limpa a leitura de Key1
+STA REG0 Unid               # Guarda o valor do registrador 0 no endereço 0 da RAM, o da unidade da contagem
+STA REG0 HEX0               # Guarda o valor do registrador 0 no endereço do HEX0
+STA REG0 Dezen              # Guarda o valor do registrador 0 no endereço 1 da RAM, o da dezena da contagem
+STA REG0 HEX1               # Guarda o valor do registrador 0 no endereço do HEX1
+STA REG0 Cent               # Guarda o valor do registrador 0 no endereço 2 da RAM, o da centena da contagem
+STA REG0 HEX2               # Guarda o valor do registrador 0 no endereço do HEX2
+STA REG0 Mil                # Guarda o valor do registrador 0 no endereço 3 da RAM, o do milhar da contagem
+STA REG0 HEX3               # Guarda o valor do registrador 0 no endereço do HEX3
+STA REG0 DezMil             # Guarda o valor do registrador 0 no endereço 4 da RAM, o da dezena de milhar da contagem
+STA REG0 HEX4               # Guarda o valor do registrador 0 no endereço do HEX4
+STA REG0 CenMil             # Guarda o valor do registrador 0 no endereço 5 da RAM, o da centena de milhar da contagem
+STA REG0 HEX5               # Guarda o valor do registrador 0 no endereço do HEX5
 STA REG0 FlagInib           # Desativa o flag que inibe contagem (Escreve 0 no último endereço da RAM)
-STA REG0 LED8               # Apaga LED de limite atingido (Escreve 0 no endereço do LED8)
-STA REG0 LED9               # Apaga LED de overflow (Escreve 0 no endereço do LED9)
+STA REG0 LED8               # Desliga o LED8
+STA REG0 LED9               # Desliga o LED9
+LDA REG1 Val1               # Carrega o valor 1 no registrador 1
+STA REG1 LimNDef            # Guarda o valor do registrador 1 no endereço 56 da RAM, para informar que não foi definido limite
 RET                         # Retorna para endereço anterior a chamada da subrotina + 1
 NOP
 NOP
 NOP
 labelVerifLimCont:          # Define a label chamada para verificar o limite de contagem
+LDA REG1 LimNDef            # Carrega o valor do registrador 1 no endereço 56 da RAM para checar se foi definido limite de contagem
+CEQ REG1 Val1               # Compara se o valor do registrador 1 é igual a 1, ou seja, não foi definido limite de contagem
+JEQ .labelRetornaVerifLim   # Desvia para o label chamada quando não foi definido limite de contagem
 LDA REG0 Unid               # Carrega o valor da unidade da contagem no registrador 0
 CEQ REG0 LimU               # Compara se a unidade da contagem é igual a unidade do limite
 JEQ .labelUnidIgual         # Desvia para o label chamada quando a unidade da contagem é igual a unidade do limite
