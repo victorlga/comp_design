@@ -26,7 +26,7 @@ end entity;
 
 architecture arquitetura of cpu is
 
-	signal controlSignal : std_logic_vector (11 downto 0);
+	signal controlSignal : std_logic_vector (14 downto 0);
 
 	alias ROM_Data_ImmValue : std_logic_vector(dataWidth - 1 downto 0) is ROM_Data(dataWidth - 1 downto 0);
 	alias Reg_Address : std_logic_vector(1 downto 0) is ROM_Data(10 downto 9);
@@ -35,14 +35,16 @@ architecture arquitetura of cpu is
 	alias opcode : std_logic_vector(3 downto 0) is ROM_Data(14 downto 11);
 	
 	alias enableFlagEqual : std_logic is controlSignal(2);
-	alias ULA_Operation : std_logic_vector(1 downto 0) is controlSignal(4 downto 3);
-	alias enableBlocoReg : std_logic is controlSignal(5);
-	alias selMux : std_logic is controlSignal(6);
-	alias jeq : std_logic is controlSignal(7);
-	alias jsr : std_logic is controlSignal(8);
-	alias ret : std_logic is controlSignal(9);
-	alias jmp : std_logic is controlSignal(10);
-	alias enableWriteReturn : std_logic is controlSignal(11);
+	alias enableFlagLower : std_logic is controlSignal(3);
+	alias ULA_Operation : std_logic_vector(2 downto 0) is controlSignal(6 downto 4);
+	alias enableBlocoReg : std_logic is controlSignal(7);
+	alias selMux : std_logic is controlSignal(8);
+	alias jeq : std_logic is controlSignal(9);
+	alias jsr : std_logic is controlSignal(10);
+	alias ret : std_logic is controlSignal(11);
+	alias jmp : std_logic is controlSignal(12);
+	alias jlt : std_logic is controlSignal(13);
+	alias enableWriteReturn : std_logic is controlSignal(14);
 	
 	signal ULA_Data_In_Mux : std_logic_vector (dataWidth-1 downto 0);
 	signal ULA_Data_Out : std_logic_vector (dataWidth-1 downto 0);
@@ -55,8 +57,11 @@ architecture arquitetura of cpu is
 	
 	signal logicalDeviation_Out : std_logic_vector(1 downto 0);
 
-	signal Flag_In : std_logic;
-	signal Flag_Out : std_logic;
+	signal FlagEqual_In : std_logic;
+	signal FlagEqual_Out : std_logic;
+	
+	signal FlagLower_In : std_logic;
+	signal FlagLower_Out : std_logic;
 	
 begin
 
@@ -108,18 +113,28 @@ Mux_Prox_PC : entity work.MuxGenerico4x1 generic map (larguraDados => dataWidth 
 
 -- Define o valor da flag que guarda se valores nas entradas da ULA são iguais
 Flag_Equal : entity work.FlipFlop
-		  port map (DIN => Flag_In,
-					   DOUT => Flag_Out,
+		  port map (DIN => FlagEqual_In,
+					   DOUT => FlagEqual_Out,
 					   ENABLE => enableFlagEqual,
+					   CLK => CLK,
+					   RST => '0');
+						
+-- Define o valor da flag que guarda se valor na entrada A da ULA e menor que o valor na entrada B						
+Flag_Lower : entity work.FlipFlop
+		  port map (DIN => FlagLower_In,
+					   DOUT => FlagLower_Out,
+					   ENABLE => enableFlagLower,
 					   CLK => CLK,
 					   RST => '0');
 
 -- Define valor que seleciona qual o proximo endereco do PC no MUX_Prox_PC
 Deviation : entity work.logicaDesvio
-		  port map (entrada_flag => Flag_Out,
+		  port map (entrada_flagequal => FlagEqual_Out,
+						entrada_flaglower => FlagLower_Out,
 						entrada_jeq => jeq,
 						entrada_jmp => jmp,
 						entrada_jsr => jsr,
+						entrada_jlt => jlt,
 						entrada_ret => ret,
 						saida => logicalDeviation_Out);
 					  
@@ -129,7 +144,8 @@ ULA : entity work.ULASomaSub  generic map(larguraDados => dataWidth)
 						  entradaB => ULA_Data_In_Mux,
 						  saida => ULA_Data_Out,
 						  seletor => ULA_Operation,
-						  zero => Flag_In);
+						  zero => FlagEqual_In,
+						  menor => FlagLower_In);
 
 -- Decodificador de instrucoes, transforma opcode em sinais de controle
 Dec_Instruction : entity work.decoderGeneric

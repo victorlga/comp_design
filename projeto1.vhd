@@ -15,17 +15,6 @@ entity projeto1 is
 	SW : in std_logic_vector(9 downto 0); -- 10 chaves
 	 
 	LEDR : out std_logic_vector(9 downto 0); -- 10 leds
-	--ROM_DataOUT : out std_logic_vector(instructionWidth - 1 downto 0);
-	
-	--encodedHex0OUT : out std_logic_vector(3 downto 0);
-	--encodedHex1OUT : out std_logic_vector(3 downto 0);
-	--encodedHex2OUT : out std_logic_vector(3 downto 0);
-	--encodedHex3OUT : out std_logic_vector(3 downto 0);
-	--encodedHex4OUT : out std_logic_vector(3 downto 0);
-	--encodedHex5OUT : out std_logic_vector(3 downto 0);
-	--HEX_DataOUT : out std_logic_vector(3 downto 0);
-	--Data_OutOUT : out std_logic_vector(dataWidth - 1 downto 0);
-	--Data_InOUT : out std_logic_vector(dataWidth - 1 downto 0);
 	
 	-- 6 displays de 7 segmentos
 	--ROM_AddressOUT : out std_logic_vector(addrWidth - 1 downto 0);

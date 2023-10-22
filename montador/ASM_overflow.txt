@@ -5,6 +5,13 @@ STA REG1 Val1               # Guarda o valor do registrador 1 no endereço 10 da
 LDI REG2 $10                # Guarda o valor 10 no registrador 1
 STA REG2 Val10              # Guarda o valor do registrador 2 no endereço 11 da RAM, para comparar valores com 10
 JSR .labelReiniciaCont      # Desvia para a label na sub-rotina de reiniciar a contagem
+LDI REG3 $9
+STA REG3 Unid
+STA REG3 Dezen
+STA REG3 Cent
+STA REG3 Mil
+STA REG3 DezMil
+STA REG3 CenMil
 NOP
 NOP
 NOP

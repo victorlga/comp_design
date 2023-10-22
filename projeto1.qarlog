@@ -1,0 +1,34 @@
+Quartus Prime Archive log --	/home/victor/insper/6-sem/descomp/projeto1/projeto1.qarlog
+
+Archive:	/home/victor/insper/6-sem/descomp/projeto1/projeto1.qar
+Date:		Wed Oct 18 20:52:25 2023
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/victor/insper/6-sem/descomp/projeto1/ULASomaSub.vhd
+/home/victor/insper/6-sem/descomp/projeto1/Waveform.vwf
+/home/victor/insper/6-sem/descomp/projeto1/blockDecoder.vhd
+/home/victor/insper/6-sem/descomp/projeto1/blocoRegistrador.vhd
+/home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8binario.vhd
+/home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8portas.vhd
+/home/victor/insper/6-sem/descomp/projeto1/conversorHex7Seg.vhd
+/home/victor/insper/6-sem/descomp/projeto1/cpu.vhd
+/home/victor/insper/6-sem/descomp/projeto1/decoder3x8.vhd
+/home/victor/insper/6-sem/descomp/projeto1/decoderGeneric.vhd
+/home/victor/insper/6-sem/descomp/projeto1/edgeDetector.vhd
+/home/victor/insper/6-sem/descomp/projeto1/flipflop.vhd
+/home/victor/insper/6-sem/descomp/projeto1/logicaDesvio.vhd
+/home/victor/insper/6-sem/descomp/projeto1/memoriaRAM.vhd
+/home/victor/insper/6-sem/descomp/projeto1/memoriaROM.vhd
+/home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd
+/home/victor/insper/6-sem/descomp/projeto1/muxGenerico4x1.vhd
+/home/victor/insper/6-sem/descomp/projeto1/projeto1.qpf
+/home/victor/insper/6-sem/descomp/projeto1/projeto1.qsf
+/home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd
+/home/victor/insper/6-sem/descomp/projeto1/registradorGenerico.vhd
+/home/victor/insper/6-sem/descomp/projeto1/somaConstante.vhd
+/home/victor/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 23 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

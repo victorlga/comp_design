@@ -1,5 +1,5 @@
 Analysis & Synthesis report for projeto1
-Tue Oct 17 18:30:00 2023
+Sun Oct 22 14:20:01 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,63 +13,65 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |projeto1
- 11. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 12. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
- 13. Parameter Settings for User Entity Instance: cpu:CPU
- 14. Parameter Settings for User Entity Instance: cpu:CPU|muxGenerico2x1:Mux_EntradaB_ULA
- 15. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg
- 16. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0
- 17. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG1
- 18. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2
- 19. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3
- 20. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|muxGenerico4x1:MUX_DOUT
- 21. Parameter Settings for User Entity Instance: cpu:CPU|registradorGenerico:PC
- 22. Parameter Settings for User Entity Instance: cpu:CPU|registradorGenerico:Reg_Retorno
- 23. Parameter Settings for User Entity Instance: cpu:CPU|somaConstante:incrementa_PC
- 24. Parameter Settings for User Entity Instance: cpu:CPU|muxGenerico4x1:Mux_Prox_PC
- 25. Parameter Settings for User Entity Instance: cpu:CPU|ULASomaSub:ULA
- 26. Parameter Settings for User Entity Instance: registradorGenerico:RegisterVector
- 27. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX0
- 28. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX1
- 29. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX2
- 30. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX3
- 31. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX4
- 32. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX5
- 33. Port Connectivity Checks: "FlipFlop:FlipFlop_Key1"
- 34. Port Connectivity Checks: "FlipFlop:FlipFlop_Key0"
- 35. Port Connectivity Checks: "conversorHex7Seg:HexDisplay5"
- 36. Port Connectivity Checks: "registradorGenerico:RegisterHEX5"
- 37. Port Connectivity Checks: "conversorHex7Seg:HexDisplay4"
- 38. Port Connectivity Checks: "registradorGenerico:RegisterHEX4"
- 39. Port Connectivity Checks: "conversorHex7Seg:HexDisplay3"
- 40. Port Connectivity Checks: "registradorGenerico:RegisterHEX3"
- 41. Port Connectivity Checks: "conversorHex7Seg:HexDisplay2"
- 42. Port Connectivity Checks: "registradorGenerico:RegisterHEX2"
- 43. Port Connectivity Checks: "conversorHex7Seg:HexDisplay1"
- 44. Port Connectivity Checks: "registradorGenerico:RegisterHEX1"
- 45. Port Connectivity Checks: "conversorHex7Seg:HexDisplay0"
- 46. Port Connectivity Checks: "registradorGenerico:RegisterHEX0"
- 47. Port Connectivity Checks: "registradorGenerico:RegisterVector"
- 48. Port Connectivity Checks: "FlipFlop:FlipFlop8"
- 49. Port Connectivity Checks: "FlipFlop:FlipFlop9"
- 50. Port Connectivity Checks: "cpu:CPU|FlipFlop:Flag_Equal"
- 51. Port Connectivity Checks: "cpu:CPU|muxGenerico4x1:Mux_Prox_PC"
- 52. Port Connectivity Checks: "cpu:CPU|registradorGenerico:Reg_Retorno"
- 53. Port Connectivity Checks: "cpu:CPU|registradorGenerico:PC"
- 54. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3"
- 55. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2"
- 56. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG1"
- 57. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0"
- 58. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg"
- 59. Port Connectivity Checks: "cpu:CPU"
- 60. Port Connectivity Checks: "blockDecoder:DECODER1|decoder3x8:DEC_BLOCK"
- 61. Port Connectivity Checks: "blockDecoder:DECODER1|decoder3x8:DEC_UNITY"
- 62. Post-Synthesis Netlist Statistics for Top Partition
- 63. Elapsed Time Per Partition
- 64. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |projeto1
+ 12. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 13. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
+ 14. Parameter Settings for User Entity Instance: cpu:CPU
+ 15. Parameter Settings for User Entity Instance: cpu:CPU|muxGenerico2x1:Mux_EntradaB_ULA
+ 16. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg
+ 17. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0
+ 18. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG1
+ 19. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2
+ 20. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3
+ 21. Parameter Settings for User Entity Instance: cpu:CPU|blocoRegistrador:Bloco_Reg|muxGenerico4x1:MUX_DOUT
+ 22. Parameter Settings for User Entity Instance: cpu:CPU|registradorGenerico:PC
+ 23. Parameter Settings for User Entity Instance: cpu:CPU|registradorGenerico:Reg_Retorno
+ 24. Parameter Settings for User Entity Instance: cpu:CPU|somaConstante:incrementa_PC
+ 25. Parameter Settings for User Entity Instance: cpu:CPU|muxGenerico4x1:Mux_Prox_PC
+ 26. Parameter Settings for User Entity Instance: cpu:CPU|ULASomaSub:ULA
+ 27. Parameter Settings for User Entity Instance: registradorGenerico:RegisterVector
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX0
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX1
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX2
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX3
+ 32. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX4
+ 33. Parameter Settings for User Entity Instance: registradorGenerico:RegisterHEX5
+ 34. Port Connectivity Checks: "FlipFlop:FlipFlop_Key1"
+ 35. Port Connectivity Checks: "FlipFlop:FlipFlop_Key0"
+ 36. Port Connectivity Checks: "conversorHex7Seg:HexDisplay5"
+ 37. Port Connectivity Checks: "registradorGenerico:RegisterHEX5"
+ 38. Port Connectivity Checks: "conversorHex7Seg:HexDisplay4"
+ 39. Port Connectivity Checks: "registradorGenerico:RegisterHEX4"
+ 40. Port Connectivity Checks: "conversorHex7Seg:HexDisplay3"
+ 41. Port Connectivity Checks: "registradorGenerico:RegisterHEX3"
+ 42. Port Connectivity Checks: "conversorHex7Seg:HexDisplay2"
+ 43. Port Connectivity Checks: "registradorGenerico:RegisterHEX2"
+ 44. Port Connectivity Checks: "conversorHex7Seg:HexDisplay1"
+ 45. Port Connectivity Checks: "registradorGenerico:RegisterHEX1"
+ 46. Port Connectivity Checks: "conversorHex7Seg:HexDisplay0"
+ 47. Port Connectivity Checks: "registradorGenerico:RegisterHEX0"
+ 48. Port Connectivity Checks: "registradorGenerico:RegisterVector"
+ 49. Port Connectivity Checks: "FlipFlop:FlipFlop8"
+ 50. Port Connectivity Checks: "FlipFlop:FlipFlop9"
+ 51. Port Connectivity Checks: "cpu:CPU|FlipFlop:Flag_Lower"
+ 52. Port Connectivity Checks: "cpu:CPU|FlipFlop:Flag_Equal"
+ 53. Port Connectivity Checks: "cpu:CPU|muxGenerico4x1:Mux_Prox_PC"
+ 54. Port Connectivity Checks: "cpu:CPU|registradorGenerico:Reg_Retorno"
+ 55. Port Connectivity Checks: "cpu:CPU|registradorGenerico:PC"
+ 56. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3"
+ 57. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2"
+ 58. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG1"
+ 59. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0"
+ 60. Port Connectivity Checks: "cpu:CPU|blocoRegistrador:Bloco_Reg"
+ 61. Port Connectivity Checks: "cpu:CPU"
+ 62. Port Connectivity Checks: "blockDecoder:DECODER1|decoder3x8:DEC_BLOCK"
+ 63. Port Connectivity Checks: "blockDecoder:DECODER1|decoder3x8:DEC_UNITY"
+ 64. Post-Synthesis Netlist Statistics for Top Partition
+ 65. Elapsed Time Per Partition
+ 66. Analysis & Synthesis Messages
 
 
 
@@ -96,13 +98,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Oct 17 18:30:00 2023       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 22 14:20:01 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; projeto1                                    ;
 ; Top-level Entity Name           ; projeto1                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 601                                         ;
+; Total registers                 ; 0                                           ;
 ; Total pins                      ; 68                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -214,116 +216,133 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; buffer_3_state_8binario.vhd      ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8binario.vhd ;         ;
-; projeto1.vhd                     ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd                ;         ;
-; cpu.vhd                          ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd                     ;         ;
-; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/ULASomaSub.vhd              ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/somaConstante.vhd           ;         ;
-; decoderGeneric.vhd               ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/decoderGeneric.vhd          ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/muxGenerico4x1.vhd          ;         ;
-; logicaDesvio.vhd                 ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/logicaDesvio.vhd            ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd          ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/registradorGenerico.vhd     ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/edgeDetector.vhd            ;         ;
-; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8portas.vhd  ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/conversorHex7Seg.vhd        ;         ;
-; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/decoder3x8.vhd              ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/memoriaRAM.vhd              ;         ;
-; blockDecoder.vhd                 ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/blockDecoder.vhd            ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/memoriaROM.vhd              ;         ;
-; flipflop.vhd                     ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/flipflop.vhd                ;         ;
-; blocoRegistrador.vhd             ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1/blocoRegistrador.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; buffer_3_state_8binario.vhd      ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/buffer_3_state_8binario.vhd ;         ;
+; projeto1.vhd                     ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd                ;         ;
+; cpu.vhd                          ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd                     ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/ULASomaSub.vhd              ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/somaConstante.vhd           ;         ;
+; decoderGeneric.vhd               ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/decoderGeneric.vhd          ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico4x1.vhd          ;         ;
+; logicaDesvio.vhd                 ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/logicaDesvio.vhd            ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd          ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/registradorGenerico.vhd     ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/edgeDetector.vhd            ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/buffer_3_state_8portas.vhd  ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/conversorHex7Seg.vhd        ;         ;
+; decoder3x8.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/decoder3x8.vhd              ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/memoriaRAM.vhd              ;         ;
+; blockDecoder.vhd                 ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/blockDecoder.vhd            ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/memoriaROM.vhd              ;         ;
+; flipflop.vhd                     ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/flipflop.vhd                ;         ;
+; blocoRegistrador.vhd             ; yes             ; User VHDL File  ; /home/victor/insper/6-sem/descomp/projeto1_final/blocoRegistrador.vhd        ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 506            ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 537            ;
-;     -- 7 input functions                    ; 4              ;
-;     -- 6 input functions                    ; 336            ;
-;     -- 5 input functions                    ; 47             ;
-;     -- 4 input functions                    ; 51             ;
-;     -- <=3 input functions                  ; 99             ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 601            ;
-;                                             ;                ;
-; I/O pins                                    ; 68             ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 599            ;
-; Total fan-out                               ; 4666           ;
-; Average fan-out                             ; 3.66           ;
-+---------------------------------------------+----------------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimate of Logic utilization (ALMs needed) ; 0        ;
+;                                             ;          ;
+; Combinational ALUT usage for logic          ; 0        ;
+;     -- 7 input functions                    ; 0        ;
+;     -- 6 input functions                    ; 0        ;
+;     -- 5 input functions                    ; 0        ;
+;     -- 4 input functions                    ; 0        ;
+;     -- <=3 input functions                  ; 0        ;
+;                                             ;          ;
+; Dedicated logic registers                   ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 68       ;
+;                                             ;          ;
+; Total DSP Blocks                            ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 1        ;
+; Total fan-out                               ; 68       ;
+; Average fan-out                             ; 0.50     ;
++---------------------------------------------+----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
-+-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                   ; Entity Name         ; Library Name ;
-+-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------+--------------+
-; |projeto1                               ; 537 (9)             ; 601 (0)                   ; 0                 ; 0          ; 68   ; 0            ; |projeto1                                                             ; projeto1            ; work         ;
-;    |FlipFlop:FlipFlop8|                 ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|FlipFlop:FlipFlop8                                          ; FlipFlop            ; work         ;
-;    |FlipFlop:FlipFlop9|                 ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|FlipFlop:FlipFlop9                                          ; FlipFlop            ; work         ;
-;    |FlipFlop:FlipFlop_Key0|             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|FlipFlop:FlipFlop_Key0                                      ; FlipFlop            ; work         ;
-;    |FlipFlop:FlipFlop_Key1|             ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|FlipFlop:FlipFlop_Key1                                      ; FlipFlop            ; work         ;
-;    |blockDecoder:DECODER1|              ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|blockDecoder:DECODER1                                       ; blockDecoder        ; work         ;
-;    |conversorHex7Seg:HexDisplay0|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|conversorHex7Seg:HexDisplay0                                ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:HexDisplay1|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|conversorHex7Seg:HexDisplay1                                ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:HexDisplay2|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|conversorHex7Seg:HexDisplay2                                ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:HexDisplay3|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|conversorHex7Seg:HexDisplay3                                ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:HexDisplay4|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|conversorHex7Seg:HexDisplay4                                ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:HexDisplay5|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|conversorHex7Seg:HexDisplay5                                ; conversorHex7Seg    ; work         ;
-;    |cpu:CPU|                            ; 79 (0)              ; 51 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU                                                     ; cpu                 ; work         ;
-;       |FlipFlop:Flag_Equal|             ; 4 (4)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|FlipFlop:Flag_Equal                                 ; FlipFlop            ; work         ;
-;       |ULASomaSub:ULA|                  ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|ULASomaSub:ULA                                      ; ULASomaSub          ; work         ;
-;       |blocoRegistrador:Bloco_Reg|      ; 12 (4)              ; 32 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|blocoRegistrador:Bloco_Reg                          ; blocoRegistrador    ; work         ;
-;          |muxGenerico4x1:MUX_DOUT|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|blocoRegistrador:Bloco_Reg|muxGenerico4x1:MUX_DOUT  ; muxGenerico4x1      ; work         ;
-;          |registradorGenerico:REG0|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0 ; registradorGenerico ; work         ;
-;          |registradorGenerico:REG1|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG1 ; registradorGenerico ; work         ;
-;          |registradorGenerico:REG2|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2 ; registradorGenerico ; work         ;
-;          |registradorGenerico:REG3|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3 ; registradorGenerico ; work         ;
-;       |decoderGeneric:Dec_Instruction|  ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|decoderGeneric:Dec_Instruction                      ; decoderGeneric      ; work         ;
-;       |logicaDesvio:Deviation|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|logicaDesvio:Deviation                              ; logicaDesvio        ; work         ;
-;       |muxGenerico2x1:Mux_EntradaB_ULA| ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|muxGenerico2x1:Mux_EntradaB_ULA                     ; muxGenerico2x1      ; work         ;
-;       |muxGenerico4x1:Mux_Prox_PC|      ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|muxGenerico4x1:Mux_Prox_PC                          ; muxGenerico4x1      ; work         ;
-;       |registradorGenerico:PC|          ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|registradorGenerico:PC                              ; registradorGenerico ; work         ;
-;       |registradorGenerico:Reg_Retorno| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|registradorGenerico:Reg_Retorno                     ; registradorGenerico ; work         ;
-;       |somaConstante:incrementa_PC|     ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|cpu:CPU|somaConstante:incrementa_PC                         ; somaConstante       ; work         ;
-;    |edgeDetector:detectorKey0|          ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|edgeDetector:detectorKey0                                   ; edgeDetector        ; work         ;
-;    |edgeDetector:detectorKey1|          ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|edgeDetector:detectorKey1                                   ; edgeDetector        ; work         ;
-;    |memoriaRAM:RAM1|                    ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |projeto1|memoriaRAM:RAM1                                             ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                    ; 86 (86)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|memoriaROM:ROM1                                             ; memoriaROM          ; work         ;
-;    |registradorGenerico:RegisterHEX0|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|registradorGenerico:RegisterHEX0                            ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegisterHEX1|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|registradorGenerico:RegisterHEX1                            ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegisterHEX2|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|registradorGenerico:RegisterHEX2                            ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegisterHEX3|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|registradorGenerico:RegisterHEX3                            ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegisterHEX4|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|registradorGenerico:RegisterHEX4                            ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegisterHEX5|   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|registradorGenerico:RegisterHEX5                            ; registradorGenerico ; work         ;
-;    |registradorGenerico:RegisterVector| ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |projeto1|registradorGenerico:RegisterVector                          ; registradorGenerico ; work         ;
-+-----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |projeto1                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 68   ; 0            ; |projeto1           ; projeto1    ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                   ;
++------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                          ; Reason for Removal                          ;
++------------------------------------------------------------------------+---------------------------------------------+
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2|DOUT[0..7] ; Stuck at GND due to stuck port clock_enable ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG1|DOUT[0..7] ; Stuck at GND due to stuck port clock_enable ;
+; FlipFlop:FlipFlop_Key1|DOUT                                            ; Stuck at VCC due to stuck port data_in      ;
+; edgeDetector:detectorKey1|saidaQ                                       ; Lost fanout                                 ;
+; cpu:CPU|FlipFlop:Flag_Equal|DOUT                                       ; Lost fanout                                 ;
+; cpu:CPU|FlipFlop:Flag_Lower|DOUT                                       ; Lost fanout                                 ;
+; cpu:CPU|registradorGenerico:Reg_Retorno|DOUT[0..8]                     ; Stuck at GND due to stuck port clock_enable ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0|DOUT[0..7] ; Stuck at GND due to stuck port clock_enable ;
+; FlipFlop:FlipFlop_Key0|DOUT                                            ; Lost fanout                                 ;
+; edgeDetector:detectorKey0|saidaQ                                       ; Lost fanout                                 ;
+; registradorGenerico:RegisterHEX5|DOUT[0..3]                            ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegisterHEX4|DOUT[0..3]                            ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegisterHEX3|DOUT[0..3]                            ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegisterHEX2|DOUT[0..3]                            ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegisterHEX1|DOUT[0..3]                            ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegisterHEX0|DOUT[0..3]                            ; Stuck at GND due to stuck port clock_enable ;
+; registradorGenerico:RegisterVector|DOUT[0..7]                          ; Stuck at GND due to stuck port clock_enable ;
+; FlipFlop:FlipFlop8|DOUT                                                ; Stuck at GND due to stuck port clock_enable ;
+; FlipFlop:FlipFlop9|DOUT                                                ; Stuck at GND due to stuck port clock_enable ;
+; cpu:CPU|registradorGenerico:PC|DOUT[0..8]                              ; Lost fanout                                 ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[0..7] ; Lost fanout                                 ;
+; Total Number of Removed Registers = 90                                 ;                                             ;
++------------------------------------------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                            ;
++---------------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal             ; Registers Removed due to This Register                                          ;
++---------------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; FlipFlop:FlipFlop_Key1|DOUT                                         ; Stuck at VCC                   ; edgeDetector:detectorKey1|saidaQ,                                               ;
+;                                                                     ; due to stuck port data_in      ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0|DOUT[0],            ;
+;                                                                     ;                                ; FlipFlop:FlipFlop_Key0|DOUT, edgeDetector:detectorKey0|saidaQ,                  ;
+;                                                                     ;                                ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[1]             ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2|DOUT[7] ; Stuck at GND                   ; cpu:CPU|registradorGenerico:PC|DOUT[2], cpu:CPU|registradorGenerico:PC|DOUT[1], ;
+;                                                                     ; due to stuck port clock_enable ; cpu:CPU|registradorGenerico:PC|DOUT[0]                                          ;
+; cpu:CPU|registradorGenerico:Reg_Retorno|DOUT[8]                     ; Stuck at GND                   ; cpu:CPU|registradorGenerico:PC|DOUT[5], cpu:CPU|registradorGenerico:PC|DOUT[4], ;
+;                                                                     ; due to stuck port clock_enable ; cpu:CPU|registradorGenerico:PC|DOUT[3]                                          ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0|DOUT[7] ; Stuck at GND                   ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[7],            ;
+;                                                                     ; due to stuck port clock_enable ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[0]             ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG2|DOUT[2] ; Stuck at GND                   ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[2]             ;
+;                                                                     ; due to stuck port clock_enable ;                                                                                 ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0|DOUT[6] ; Stuck at GND                   ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[6]             ;
+;                                                                     ; due to stuck port clock_enable ;                                                                                 ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0|DOUT[5] ; Stuck at GND                   ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[5]             ;
+;                                                                     ; due to stuck port clock_enable ;                                                                                 ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0|DOUT[4] ; Stuck at GND                   ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[4]             ;
+;                                                                     ; due to stuck port clock_enable ;                                                                                 ;
+; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0|DOUT[3] ; Stuck at GND                   ; cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG3|DOUT[3]             ;
+;                                                                     ; due to stuck port clock_enable ;                                                                                 ;
++---------------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -331,28 +350,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 601   ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 32    ;
-; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 585   ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |projeto1|cpu:CPU|registradorGenerico:PC|DOUT[2]                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |projeto1|cpu:CPU|blocoRegistrador:Bloco_Reg|muxGenerico4x1:MUX_DOUT|saida_MUX[0] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |projeto1|cpu:CPU|muxGenerico2x1:Mux_EntradaB_ULA|saida_MUX[1]                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |projeto1|cpu:CPU|ULASomaSub:ULA|saida[5]                                         ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |projeto1|cpu:CPU|decoderGeneric:Dec_Instruction|sinais_controle[1]               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |projeto1|cpu:CPU|decoderGeneric:Dec_Instruction|sinais_controle[4]               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -761,6 +766,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------+
+; Port Connectivity Checks: "cpu:CPU|FlipFlop:Flag_Lower" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------+
 ; Port Connectivity Checks: "cpu:CPU|FlipFlop:Flag_Equal" ;
 +------+-------+----------+-------------------------------+
 ; Port ; Type  ; Severity ; Details                       ;
@@ -875,29 +889,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 601                         ;
-;     CLR               ; 2                           ;
-;     ENA               ; 553                         ;
-;     ENA SLD           ; 32                          ;
-;     plain             ; 14                          ;
-; arriav_lcell_comb     ; 537                         ;
-;     arith             ; 18                          ;
-;         1 data inputs ; 9                           ;
-;         3 data inputs ; 1                           ;
-;         5 data inputs ; 8                           ;
-;     extend            ; 4                           ;
-;         7 data inputs ; 4                           ;
-;     normal            ; 515                         ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 79                          ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 51                          ;
-;         5 data inputs ; 39                          ;
-;         6 data inputs ; 336                         ;
+; arriav_lcell_comb     ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
 ; boundary_port         ; 68                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.30                       ;
-; Average LUT depth     ; 6.53                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -906,7 +904,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -916,111 +914,181 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Oct 17 18:29:53 2023
+    Info: Processing started: Sun Oct 22 14:19:56 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off projeto1 -c projeto1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8binario.vhd
-    Info (12022): Found design unit 1: buffer_3_state_8binario-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8binario.vhd Line: 12
-    Info (12023): Found entity 1: buffer_3_state_8binario File: /home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8binario.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_8binario-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/buffer_3_state_8binario.vhd Line: 12
+    Info (12023): Found entity 1: buffer_3_state_8binario File: /home/victor/insper/6-sem/descomp/projeto1_final/buffer_3_state_8binario.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file projeto1.vhd
-    Info (12022): Found design unit 1: projeto1-arquitetura File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 42
-    Info (12023): Found entity 1: projeto1 File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 4
+    Info (12022): Found design unit 1: projeto1-arquitetura File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 31
+    Info (12023): Found entity 1: projeto1 File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
-    Info (12022): Found design unit 1: cpu-arquitetura File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 27
-    Info (12023): Found entity 1: cpu File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 4
+    Info (12022): Found design unit 1: cpu-arquitetura File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 27
+    Info (12023): Found entity 1: cpu File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULASomaSub.vhd
-    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/ULASomaSub.vhd Line: 15
-    Info (12023): Found entity 1: ULASomaSub File: /home/victor/insper/6-sem/descomp/projeto1/ULASomaSub.vhd Line: 5
+    Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/ULASomaSub.vhd Line: 16
+    Info (12023): Found entity 1: ULASomaSub File: /home/victor/insper/6-sem/descomp/projeto1_final/ULASomaSub.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file somaConstante.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/somaConstante.vhd Line: 18
-    Info (12023): Found entity 1: somaConstante File: /home/victor/insper/6-sem/descomp/projeto1/somaConstante.vhd Line: 5
+    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/somaConstante.vhd Line: 18
+    Info (12023): Found entity 1: somaConstante File: /home/victor/insper/6-sem/descomp/projeto1_final/somaConstante.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file decoderGeneric.vhd
-    Info (12022): Found design unit 1: decoderGeneric-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/decoderGeneric.vhd Line: 10
-    Info (12023): Found entity 1: decoderGeneric File: /home/victor/insper/6-sem/descomp/projeto1/decoderGeneric.vhd Line: 4
+    Info (12022): Found design unit 1: decoderGeneric-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/decoderGeneric.vhd Line: 10
+    Info (12023): Found entity 1: decoderGeneric File: /home/victor/insper/6-sem/descomp/projeto1_final/decoderGeneric.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico4x1.vhd
-    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico4x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico4x1 File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico4x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico4x1-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico4x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico4x1 File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico4x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file logicaDesvio.vhd
-    Info (12022): Found design unit 1: logicaDesvio-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/logicaDesvio.vhd Line: 15
-    Info (12023): Found entity 1: logicaDesvio File: /home/victor/insper/6-sem/descomp/projeto1/logicaDesvio.vhd Line: 4
+    Info (12022): Found design unit 1: logicaDesvio-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/logicaDesvio.vhd Line: 17
+    Info (12023): Found entity 1: logicaDesvio File: /home/victor/insper/6-sem/descomp/projeto1_final/logicaDesvio.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file muxGenerico2x1.vhd
-    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 14
-    Info (12023): Found entity 1: muxGenerico2x1 File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 4
+    Info (12022): Found design unit 1: muxGenerico2x1-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 14
+    Info (12023): Found entity 1: muxGenerico2x1 File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registradorGenerico.vhd
-    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/registradorGenerico.vhd Line: 15
-    Info (12023): Found entity 1: registradorGenerico File: /home/victor/insper/6-sem/descomp/projeto1/registradorGenerico.vhd Line: 4
+    Info (12022): Found design unit 1: registradorGenerico-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/registradorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: registradorGenerico File: /home/victor/insper/6-sem/descomp/projeto1_final/registradorGenerico.vhd Line: 4
 Info (12021): Found 3 design units, including 1 entities, in source file edgeDetector.vhd
-    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/victor/insper/6-sem/descomp/projeto1/edgeDetector.vhd Line: 10
-    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/victor/insper/6-sem/descomp/projeto1/edgeDetector.vhd Line: 23
-    Info (12023): Found entity 1: edgeDetector File: /home/victor/insper/6-sem/descomp/projeto1/edgeDetector.vhd Line: 4
+    Info (12022): Found design unit 1: edgeDetector-bordaSubida File: /home/victor/insper/6-sem/descomp/projeto1_final/edgeDetector.vhd Line: 10
+    Info (12022): Found design unit 2: edgeDetector-bordaDescida File: /home/victor/insper/6-sem/descomp/projeto1_final/edgeDetector.vhd Line: 23
+    Info (12023): Found entity 1: edgeDetector File: /home/victor/insper/6-sem/descomp/projeto1_final/edgeDetector.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file buffer_3_state_8portas.vhd
-    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8portas.vhd Line: 11
-    Info (12023): Found entity 1: buffer_3_state_8portas File: /home/victor/insper/6-sem/descomp/projeto1/buffer_3_state_8portas.vhd Line: 4
+    Info (12022): Found design unit 1: buffer_3_state_8portas-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/buffer_3_state_8portas.vhd Line: 11
+    Info (12023): Found entity 1: buffer_3_state_8portas File: /home/victor/insper/6-sem/descomp/projeto1_final/buffer_3_state_8portas.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file conversorHex7Seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: /home/victor/insper/6-sem/descomp/projeto1/conversorHex7Seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: /home/victor/insper/6-sem/descomp/projeto1_final/conversorHex7Seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhd
-    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/decoder3x8.vhd Line: 10
-    Info (12023): Found entity 1: decoder3x8 File: /home/victor/insper/6-sem/descomp/projeto1/decoder3x8.vhd Line: 4
+    Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/decoder3x8.vhd Line: 10
+    Info (12023): Found entity 1: decoder3x8 File: /home/victor/insper/6-sem/descomp/projeto1_final/decoder3x8.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/victor/insper/6-sem/descomp/projeto1/memoriaRAM.vhd Line: 21
-    Info (12023): Found entity 1: memoriaRAM File: /home/victor/insper/6-sem/descomp/projeto1/memoriaRAM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/victor/insper/6-sem/descomp/projeto1_final/memoriaRAM.vhd Line: 21
+    Info (12023): Found entity 1: memoriaRAM File: /home/victor/insper/6-sem/descomp/projeto1_final/memoriaRAM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file blockDecoder.vhd
-    Info (12022): Found design unit 1: blockDecoder-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/blockDecoder.vhd Line: 36
-    Info (12023): Found entity 1: blockDecoder File: /home/victor/insper/6-sem/descomp/projeto1/blockDecoder.vhd Line: 4
+    Info (12022): Found design unit 1: blockDecoder-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/blockDecoder.vhd Line: 36
+    Info (12023): Found entity 1: blockDecoder File: /home/victor/insper/6-sem/descomp/projeto1_final/blockDecoder.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/victor/insper/6-sem/descomp/projeto1/memoriaROM.vhd Line: 16
-    Info (12023): Found entity 1: memoriaROM File: /home/victor/insper/6-sem/descomp/projeto1/memoriaROM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/victor/insper/6-sem/descomp/projeto1_final/memoriaROM.vhd Line: 16
+    Info (12023): Found entity 1: memoriaROM File: /home/victor/insper/6-sem/descomp/projeto1_final/memoriaROM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
-    Info (12022): Found design unit 1: FlipFlop-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/flipflop.vhd Line: 13
-    Info (12023): Found entity 1: FlipFlop File: /home/victor/insper/6-sem/descomp/projeto1/flipflop.vhd Line: 4
+    Info (12022): Found design unit 1: FlipFlop-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/flipflop.vhd Line: 13
+    Info (12023): Found entity 1: FlipFlop File: /home/victor/insper/6-sem/descomp/projeto1_final/flipflop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file blocoRegistrador.vhd
-    Info (12022): Found design unit 1: blocoRegistrador-comportamento File: /home/victor/insper/6-sem/descomp/projeto1/blocoRegistrador.vhd Line: 17
-    Info (12023): Found entity 1: blocoRegistrador File: /home/victor/insper/6-sem/descomp/projeto1/blocoRegistrador.vhd Line: 5
+    Info (12022): Found design unit 1: blocoRegistrador-comportamento File: /home/victor/insper/6-sem/descomp/projeto1_final/blocoRegistrador.vhd Line: 17
+    Info (12023): Found entity 1: blocoRegistrador File: /home/victor/insper/6-sem/descomp/projeto1_final/blocoRegistrador.vhd Line: 5
 Info (12127): Elaborating entity "projeto1" for the top level hierarchy
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 128
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 133
-Info (12128): Elaborating entity "blockDecoder" for hierarchy "blockDecoder:DECODER1" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 143
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "blockDecoder:DECODER1|decoder3x8:DEC_UNITY" File: /home/victor/insper/6-sem/descomp/projeto1/blockDecoder.vhd Line: 48
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:CPU" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 174
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "cpu:CPU|muxGenerico2x1:Mux_EntradaB_ULA" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 64
-Info (12128): Elaborating entity "blocoRegistrador" for hierarchy "cpu:CPU|blocoRegistrador:Bloco_Reg" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 71
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0" File: /home/victor/insper/6-sem/descomp/projeto1/blocoRegistrador.vhd Line: 33
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "cpu:CPU|blocoRegistrador:Bloco_Reg|muxGenerico4x1:MUX_DOUT" File: /home/victor/insper/6-sem/descomp/projeto1/blocoRegistrador.vhd Line: 62
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "cpu:CPU|registradorGenerico:PC" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 80
-Info (12128): Elaborating entity "somaConstante" for hierarchy "cpu:CPU|somaConstante:incrementa_PC" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 96
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "cpu:CPU|muxGenerico4x1:Mux_Prox_PC" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 101
-Info (12128): Elaborating entity "FlipFlop" for hierarchy "cpu:CPU|FlipFlop:Flag_Equal" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 110
-Info (12128): Elaborating entity "logicaDesvio" for hierarchy "cpu:CPU|logicaDesvio:Deviation" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 118
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "cpu:CPU|ULASomaSub:ULA" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 127
-Info (12128): Elaborating entity "decoderGeneric" for hierarchy "cpu:CPU|decoderGeneric:Dec_Instruction" File: /home/victor/insper/6-sem/descomp/projeto1/cpu.vhd Line: 135
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegisterHEX0" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 212
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:HexDisplay0" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 220
-Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:Buffer3State8" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 310
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorKey0" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 316
-Info (12128): Elaborating entity "buffer_3_state_8binario" for hierarchy "buffer_3_state_8binario:key0Tristate8" File: /home/victor/insper/6-sem/descomp/projeto1/projeto1.vhd Line: 340
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 117
+Warning (10542): VHDL Variable Declaration warning at memoriaROM.vhd(21): used initial value expression for variable "tmp" because variable was never assigned a value File: /home/victor/insper/6-sem/descomp/projeto1_final/memoriaROM.vhd Line: 21
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 122
+Info (12128): Elaborating entity "blockDecoder" for hierarchy "blockDecoder:DECODER1" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 132
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "blockDecoder:DECODER1|decoder3x8:DEC_UNITY" File: /home/victor/insper/6-sem/descomp/projeto1_final/blockDecoder.vhd Line: 48
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:CPU" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 163
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "cpu:CPU|muxGenerico2x1:Mux_EntradaB_ULA" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 69
+Info (12128): Elaborating entity "blocoRegistrador" for hierarchy "cpu:CPU|blocoRegistrador:Bloco_Reg" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 76
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "cpu:CPU|blocoRegistrador:Bloco_Reg|registradorGenerico:REG0" File: /home/victor/insper/6-sem/descomp/projeto1_final/blocoRegistrador.vhd Line: 33
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "cpu:CPU|blocoRegistrador:Bloco_Reg|muxGenerico4x1:MUX_DOUT" File: /home/victor/insper/6-sem/descomp/projeto1_final/blocoRegistrador.vhd Line: 62
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "cpu:CPU|registradorGenerico:PC" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 85
+Info (12128): Elaborating entity "somaConstante" for hierarchy "cpu:CPU|somaConstante:incrementa_PC" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 101
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "cpu:CPU|muxGenerico4x1:Mux_Prox_PC" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 106
+Info (12128): Elaborating entity "FlipFlop" for hierarchy "cpu:CPU|FlipFlop:Flag_Equal" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 115
+Info (12128): Elaborating entity "logicaDesvio" for hierarchy "cpu:CPU|logicaDesvio:Deviation" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 131
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "cpu:CPU|ULASomaSub:ULA" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 142
+Info (12128): Elaborating entity "decoderGeneric" for hierarchy "cpu:CPU|decoderGeneric:Dec_Instruction" File: /home/victor/insper/6-sem/descomp/projeto1_final/cpu.vhd Line: 151
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:RegisterHEX0" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 201
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:HexDisplay0" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 209
+Info (12128): Elaborating entity "buffer_3_state_8portas" for hierarchy "buffer_3_state_8portas:Buffer3State8" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 299
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorKey0" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 305
+Info (12128): Elaborating entity "buffer_3_state_8binario" for hierarchy "buffer_3_state_8binario:key0Tristate8" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 329
 Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/victor/insper/6-sem/descomp/projeto1/memoriaRAM.vhd Line: 27
+    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/victor/insper/6-sem/descomp/projeto1_final/memoriaRAM.vhd Line: 27
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "Data_In[7]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_In[6]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_In[5]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_In[4]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_In[3]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_In[2]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_In[1]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-    Warning (13048): Converted tri-state node "Data_In[0]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1/muxGenerico2x1.vhd Line: 10
-Info (286030): Timing-Driven Synthesis is running
+    Warning (13048): Converted tri-state node "Data_In[7]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_In[6]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_In[5]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_In[4]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_In[3]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_In[2]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_In[1]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+    Warning (13048): Converted tri-state node "Data_In[0]" into a selector File: /home/victor/insper/6-sem/descomp/projeto1_final/muxGenerico2x1.vhd Line: 10
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 17
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 21
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 21
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 21
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 21
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 21
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 21
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 21
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 22
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 22
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 22
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 22
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 22
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 22
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 22
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 23
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 23
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 23
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 23
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 23
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 23
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 23
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 24
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 24
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 24
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 24
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 24
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 24
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 24
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 25
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 25
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 25
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 25
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 25
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 25
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 25
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 26
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 26
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 26
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 26
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 26
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 26
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 26
+Info (17049): 22 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1192 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 12
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 13
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 14
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/victor/insper/6-sem/descomp/projeto1_final/projeto1.vhd Line: 15
+Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1124 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 506 megabytes
-    Info: Processing ended: Tue Oct 17 18:30:00 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:14
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 80 warnings
+    Info: Peak virtual memory: 477 megabytes
+    Info: Processing ended: Sun Oct 22 14:20:01 2023
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
 
 
