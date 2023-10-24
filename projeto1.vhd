@@ -107,9 +107,9 @@ begin
 gravar:  if simulacao generate
 	CLK <= KEY(3); -- Para simular, o clock é o botão 0
 else generate
-	--detectorSub0: work.edgeDetector(bordaSubida)
-   --     port map (clk => CLOCK_50, entrada => (not KEY(3)), saida => CLK);
-	CLK <= CLOCK_50;
+	detectorSub0: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not KEY(3)), saida => CLK);
+	--CLK <= CLOCK_50;
 end generate;
 
 
@@ -271,8 +271,8 @@ RegisterHEX4 : entity work.registradorGenerico generic map (larguraDados => 4)
 
 -- Conversor de hexadecimal para 7 segmentos para o display4
 HexDisplay4 :  entity work.conversorHex7Seg
-        port map(--dadoHex => ROM_Address(3 downto 0), 
-					  dadoHex => encodedHex4,
+        port map(dadoHex => ROM_Address(3 downto 0), 
+					  --dadoHex => encodedHex4,
                  apaga => '0',
                  negativo => '0',
                  overFlow => '0',
@@ -288,8 +288,8 @@ RegisterHEX5 : entity work.registradorGenerico generic map (larguraDados => 4)
 					  
 -- Conversor de hexadecimal para 7 segmentos para o display5
 HexDisplay5 :  entity work.conversorHex7Seg
-        port map(--dadoHex => ROM_Address(7 downto 4),
-					  dadoHex => encodedHex5,
+        port map(dadoHex => ROM_Address(7 downto 4),
+					  --dadoHex => encodedHex5,
                  apaga => '0',
                  negativo => '0',
                  overFlow => '0',
